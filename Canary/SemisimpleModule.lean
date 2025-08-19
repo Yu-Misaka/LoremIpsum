@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.RingTheory.SimpleModule.Basic
 
 variable {R M : Type*} [Ring R] [AddCommGroup M] [Module R M] {r : ℕ}
   -- each `N i` is a submodule of `M`
@@ -9,12 +9,11 @@ variable {R M : Type*} [Ring R] [AddCommGroup M] [Module R M] {r : ℕ}
 open DirectSum
 
 /-- defining `f` that takes `x` to `(x + N₁, ..., x + Nᵣ)` -/
-def f : M →ₗ[R] (⨁ i, (M ⧸ (N i))) := by
-  refine IsLinearMap.mk'
-    (fun x ↦ (mk (fun i ↦ M ⧸ N i) Finset.univ).toFun
-      -- every coordinate of the direct sum is `x + Nᵢ`
-      (fun i ↦ (⟦x⟧ : M ⧸ N i))) ⟨fun x y ↦ ?_, fun c x ↦ ?_⟩
-  · -- proving that the map respect addition
+def f : M →ₗ[R] (⨁ i, (M ⧸ (N i))) where
+  -- every coordinate of the direct sum is `x + Nᵢ`
+  toFun x := (mk (fun i ↦ M ⧸ N i) Finset.univ).toFun (fun i ↦ (⟦x⟧ : M ⧸ N i))
+  -- proving that the map respect addition
+  map_add' x y := by
     ext i
     simp
     convert_to (⟦x + y⟧ : M ⧸ N i) =
@@ -22,7 +21,8 @@ def f : M →ₗ[R] (⨁ i, (M ⧸ (N i))) := by
     · exact mk_apply_of_mem <| Finset.mem_univ i
     · congr <;> exact mk_apply_of_mem <| Finset.mem_univ i
     · rfl
-  · -- proving that the map respect scalar multiplication
+  -- proving that the map respect scalar multiplication
+  map_smul' c x := by
     ext i
     simp [smul_apply]
     convert_to (⟦c • x⟧ : M ⧸ N i) =
