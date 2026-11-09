@@ -187,9 +187,9 @@ Basic Definitions:
 	- a `WZ2PaperAssouadToLiteralRescalingCertificate` on the aforementioned data with $C_j = 4000000$
 	- $\mathbb T[T_\rho]'_{\delta/\rho}$ satisfies CWA with error $4000000C$
 - `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o, \epsilon_a, \kappa, \eta_a, \delta$, fix constant $C \in [0, +\infty]$ and $(\mathbb T, Y)_\delta$. This structure bundles:
-	- a $\rho_0 \in [\delta, 1]$, a $\rho \in [\rho_0, C \rho_0)$
+	- a $\rho_0 \in [\delta, 1]$, a $\rho \in [\rho_0, C \rho_0)$ s.t., $\mathbb T$ satisfies CWA at actual selected scale $$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTMxNDk0NTAsLTE4MzUyNzQ1NjAsLT
-E2OTQ2ODk4NDYsLTg1ODIyMjE1LC0zMjg3NDA1NSwxMTU1MDcz
-MDIzXX0=
+eyJoaXN0b3J5IjpbOTc1MjMyNDI5LC0xODM1Mjc0NTYwLC0xNj
+k0Njg5ODQ2LC04NTgyMjIxNSwtMzI4NzQwNTUsMTE1NTA3MzAy
+M119
 -->
