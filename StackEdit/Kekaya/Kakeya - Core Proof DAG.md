@@ -78,7 +78,7 @@ PureWZ2CriticalExtractionStatement
 ├── PureWZ2SubunitPackageStatement
 │   ├── PureWZ2FullFiberAssertionDRefinementStatement
 │   │   ├── PureWZ2FullFiberAssertionDRefinementData
-│   │   │   ├── WZ2PaperPureOneScaleRescalingBridge
+│   │   │   ├── WZ2PaperPureOneScaleRescalingBridge ✔
 │   │   │   │   ├── wz2PaperPureFullFiberSubfamily ✔
 │   │   │   │   │   ├── Kakeya.Streamlined.TubeSubfamily ✔
 │   │   │   │   │   └── Kakeya.Streamlined.TubeSubfamily.fromFinset ✔
@@ -187,6 +187,6 @@ Basic Definitions:
 	- a `WZ2PaperAssouadToLiteralRescalingCertificate` on the aforementioned data with $C_j = 4000000$
 	- $\mathbb T[T_\rho]'_{\delta/\rho}$ satisfies CWA with error $4000000C$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyMTU5NTE3OCwtODU4MjIyMTUsLTMyOD
-c0MDU1LDExNTUwNzMwMjNdfQ==
+eyJoaXN0b3J5IjpbLTE2OTQ2ODk4NDYsLTg1ODIyMjE1LC0zMj
+g3NDA1NSwxMTU1MDczMDIzXX0=
 -->
