@@ -169,7 +169,7 @@ Basic Definitions:
 7.   **Fixed-constant unit rescaling relative to $T_\rho$**: (`Kakeya.Assouad.wz2PaperLiteralUnitRescalingMap`)
 		- First consider the coaxial line of $T_\rho$, written as $l$, which meets the plane $z=0$ at $A$
 		- Next, consider axial vector of $T_\rho$, denoted as $\textbf d$. We write $\tilde {\textbf d} = \textbf d$ when $\textbf d_3 \geq 0$ and $\tilde {\textbf d} = - \textbf d$ otherwise
-		- Let $R$ denote the reflection across the plane through the origin with norm vector $\tilde {\textbf d} - \textbf e_3$
+		- Let $R$ denote the reflection across the plane through the origin with norm vector $\tilde {\textbf d} - \textbf e_3$ (when $\textbf d = \textbf$)
 		- Let $D$ be transverse anisotropic scaling linear map $(x, y, z) \mapsto (x/\rho, y / \rho, z)$
 		- ... is $\varphi_{T_\rho} : x \mapsto \frac1{100} D(R(x - A))$
 8. **$\mathcal L_3$**: a $\delta$-tube $T$ is in $\mathcal L_3$ if $1/2 \leq \tilde {\textbf d_3}, |A_1| \leq 1/3$ and $|A_2| \leq 1/3$ (`Kakeya.Assouad.WZ1PaperTubeInLineClass`)
@@ -181,8 +181,8 @@ Basic Definitions:
 	- $h \circ \phi_{T_\rho} \circ f= \varphi_{T_\rho} \circ f$
 	- $\varphi_{T_\rho} \circ f\subseteq g_2$
 	- $W$ is convex $\Rightarrow h^{-1}(W)$ is convex
-	- $\forall S \subseteq \mathbb R^3, |h(S)| \leq C_j |S|$
+	- $\forall S \subseteq \mathbb R^3, |h^{-1}(S)| \leq C_j |S|$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2MzAwNjgwNiwtODU4MjIyMTUsLTMyOD
+eyJoaXN0b3J5IjpbLTg0ODE2NTA2NiwtODU4MjIyMTUsLTMyOD
 c0MDU1LDExNTUwNzMwMjNdfQ==
 -->
