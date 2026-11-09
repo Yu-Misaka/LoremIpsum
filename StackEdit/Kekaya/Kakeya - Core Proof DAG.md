@@ -184,8 +184,8 @@ Basic Definitions:
 	- $\forall S \subseteq \mathbb R^3, |h^{-1}(S)| \leq C_j |S|$
 - `Kakeya.Assouad.WZ2PaperPureOneScaleRescalingBridge`: Let $\mathbb T$ be a family of $\delta$-tubes, $\mathbb T_\rho$ be a family of $\rho$-tubes with $0 < \rho$. Fix a $T_\rho \in \mathbb T_\rho$ and a constant $C \in [0, +\infty]$. Then this structure admits:
 	- a `WZ2PaperLiteralUnitRescaledFamilyData` on $(\mathbb T[T_\rho], T_\rho)$
-	- 
+	- a `WZ2PaperAssouadToLiteralRescalingCertificate` on the aforementioned data with $C_j = 4000000$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODQ0NTg5MzQsLTg1ODIyMjE1LC0zMj
-g3NDA1NSwxMTU1MDczMDIzXX0=
+eyJoaXN0b3J5IjpbMTQ1NDE1MDA2OCwtODU4MjIyMTUsLTMyOD
+c0MDU1LDExNTUwNzMwMjNdfQ==
 -->
