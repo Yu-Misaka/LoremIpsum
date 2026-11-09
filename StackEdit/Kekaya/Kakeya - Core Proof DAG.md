@@ -193,9 +193,10 @@ Basic Definitions:
 		-  The unit rescaling of $\mathbb T[T_\rho]$ relative to $T_\rho$ satisfies the CWA with error $C$
 	- a `WZ2PaperPureOneScaleRescalingBridge` on $(\mathbb T, \mathbb T_\rho, T_\rho, C)$
 	- a restriction that $0 < \delta / \rho \leq 1$
+	- a shading $Y_{\delta/\rho}'$ on $\mathbb T_{\delta/\rho}'$
 	- 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2MjY1OTAyOSwtMzQxNzgwMzQwLC0xOD
+eyJoaXN0b3J5IjpbLTU0NzM2NzQ0MywtMzQxNzgwMzQwLC0xOD
 M1Mjc0NTYwLC0xNjk0Njg5ODQ2LC04NTgyMjIxNSwtMzI4NzQw
 NTUsMTE1NTA3MzAyM119
 -->
