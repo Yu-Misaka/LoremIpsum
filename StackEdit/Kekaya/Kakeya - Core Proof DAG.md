@@ -180,8 +180,9 @@ Basic Definitions:
 	- $l \circ g_2 =l$
 	- $h \circ \phi_{T_\rho} \circ f= \varphi_{T_\rho} \circ f$
 	- $\varphi_{T_\rho} \circ f\subseteq g_2$
-	- $W$ is convex $\Rightarrow h$
+	- $W$ is convex $\Rightarrow h^{-1}(W)$ is convex
+	- $\forall S \subseteq \mathbb R^3, |h(S)| \leq C_j |S|$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTA4MDk5MjMyLC0zMjg3NDA1NSwxMTU1MD
+eyJoaXN0b3J5IjpbLTg1ODIyMjE1LC0zMjg3NDA1NSwxMTU1MD
 czMDIzXX0=
 -->
