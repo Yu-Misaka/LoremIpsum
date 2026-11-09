@@ -186,8 +186,8 @@ Basic Definitions:
 	- a `WZ2PaperLiteralUnitRescaledFamilyData` on $(\mathbb T[T_\rho], T_\rho)$
 	- a `WZ2PaperAssouadToLiteralRescalingCertificate` on the aforementioned data with $C_j = 4000000$
 	- $\mathbb T[T_\rho]'_{\delta/\rho}$ satisfies CWA with error $4000000C$
-- 
+- `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4ODk5NDQ5MSwtMTY5NDY4OTg0NiwtOD
-U4MjIyMTUsLTMyODc0MDU1LDExNTUwNzMwMjNdfQ==
+eyJoaXN0b3J5IjpbLTE4MzUyNzQ1NjAsLTE2OTQ2ODk4NDYsLT
+g1ODIyMjE1LC0zMjg3NDA1NSwxMTU1MDczMDIzXX0=
 -->
