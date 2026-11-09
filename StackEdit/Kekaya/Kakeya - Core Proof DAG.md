@@ -177,11 +177,11 @@ Basic Definitions:
 	- $\forall T_{\delta/\rho} \in \mathbb T_{\delta/\rho}, l(T_{\delta/\rho})=\varphi_{T_{\delta/\rho}}(l(f(T_{\delta/\rho})))$
 - `Kakeya.Assouad.WZ2PaperAssouadToLiteralRescalingCertificate`: Let $\mathbb T$ be a family of $\delta$-tubes, $\rho > 0, T_\rho$ be a $\rho$-tube. Suppose there is a `WZ2PaperLiteralUnitRescaledFamilyData` on this setting. And set $C_j$ a constant in $[0, +\infty]$. Then this structure admits another family of $\delta/\rho$-tube $\mathbb T'_{\delta/\rho}$ together with two bijections: $g_1 : \mathbb T'_{\delta/\rho} \rightarrow \mathbb T, g_2 : \mathbb T_{\delta/\rho} \rightarrow T'_{\delta/\rho}$ and an affine automorphism $h$ of $\mathbb R^3$  satisfying:
 	- $g_1 \circ g_2 =f$
-	- $\forall T_{\delta/\rho} \in \mathbb T_{\delta/\rho},$
-		- $l \cg_2(T_{\delta/\rho}))=l(T_{\delta/\rho})$
-		- $h \circ \phi_{T_\rho} \circ f= \varphi_{T_\rho} \circ f$
-		- $\varphi_{T_\rho} \circ f\subseteq g_2$
+	- $l \circ g_2 =l$
+	- $h \circ \phi_{T_\rho} \circ f= \varphi_{T_\rho} \circ f$
+	- $\varphi_{T_\rho} \circ f\subseteq g_2$
+	- $W$ is convex $\Rightarrow h$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTEyMDA3MDEsLTMyODc0MDU1LDExNT
-UwNzMwMjNdfQ==
+eyJoaXN0b3J5IjpbOTA4MDk5MjMyLC0zMjg3NDA1NSwxMTU1MD
+czMDIzXX0=
 -->
