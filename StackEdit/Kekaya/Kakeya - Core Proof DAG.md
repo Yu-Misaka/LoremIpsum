@@ -179,8 +179,8 @@ Basic Definitions:
 	- $g_1 \circ g_2 =f$
 	- $\forall T_{\delta/\rho} \in \mathbb T_{\delta/\rho},$
 		- $l(g_2(T_{\delta/\rho}))=l(T_{\delta/\rho})$
-		- $h \circ \phi_{T_\rho} \circ $
+		- $h \circ \phi_{T_\rho} \circ f= \varphi_{T_\rho}$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDE4NDU0NzgsLTMyODc0MDU1LDExNT
-UwNzMwMjNdfQ==
+eyJoaXN0b3J5IjpbODYwNTY1NjgwLC0zMjg3NDA1NSwxMTU1MD
+czMDIzXX0=
 -->
