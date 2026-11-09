@@ -182,7 +182,8 @@ Basic Definitions:
 	- $\varphi_{T_\rho} \circ f\subseteq g_2$
 	- $W$ is convex $\Rightarrow h^{-1}(W)$ is convex
 	- $\forall S \subseteq \mathbb R^3, |h^{-1}(S)| \leq C_j |S|$
+- `Kakeya.Assouad.WZ2PaperPureOneScaleRescalingBridge`: Let $\mathbb T$ be a family of $\delta$-tubes, $\mathbb T_\rho$ be a family of $\rho$-
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMyNDc2MTI2NCwtODU4MjIyMTUsLTMyOD
+eyJoaXN0b3J5IjpbLTkzNzIyNDkyOCwtODU4MjIyMTUsLTMyOD
 c0MDU1LDExNTUwNzMwMjNdfQ==
 -->
