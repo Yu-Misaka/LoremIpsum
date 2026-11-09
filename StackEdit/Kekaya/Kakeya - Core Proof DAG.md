@@ -175,7 +175,28 @@ Basic Definitions:
 8. **$\mathcal L_3$**: a $\delta$-tube $T$ is in $\mathcal L_3$ if $1/2 \leq \tilde {\textbf d_3}, |A_1| \leq 1/3$ and $|A_2| \leq 1/3$ (`Kakeya.Assouad.WZ1PaperTubeInLineClass`)
 - `Kakeya.Assouad.WZ2PaperLiteralUnitRescaledFamilyData`: Let $\mathbb T$ be a family of $\delta$-tubes, $\rho > 0$, $T_\rho$ be a $\rho$-tube. This structure admits a target family of $\delta/\rho$-tubes $\mathbb T_{\delta/\rho}$ in $\mathcal L_3$ and a bijection $f : \mathbb T_{\delta/\rho} \rightarrow \mathbb T$ satisfying:
 	- $\forall T_{\delta/\rho} \in \mathbb T_{\delta/\rho}$,  $l_{T_{\delta/\rho}}=\varphi_{T_{\delta/\rho}}(l_{f(T_{\delta/\rho})})$
+- Assouad-to-literal rescaling certificate: Let ρ>0, let \(\mathbb T=(T_i)_{i\in I}\) be a finite indexed family of δ-tubes, and let T_{ρ} be a fixed ρ-tube. Let ϕ_{T_{ρ}} be its Assouad unit rescaling, and let ψ_{T_{ρ}} be its literal WZ unit rescaling (Kakeya.Assouad.wz2PaperLiteralUnitRescalingMap). Let \(\mathbb L\) be a supplied literal target family of (δ/ρ)-tubes, with a bijection to the source indices.
+
+A rescaling certificate with Jacobian bound J∈[0,+∞] consists of an ordinary target family \(\mathbb U\) of (δ/ρ)-tubes, compatible bijections between the source, literal and ordinary target indices, and a single affine equivalence F:ℝ³→ℝ³ common to the whole family.
+
+Using these bijections, write the corresponding tubes as Tᵢ,Lᵢ,Uᵢ. Write axis(T) for the full line containing the axis segment of T. The certificate requires:
+
+- Same axis: for every i∈ I,
+  axis(Uᵢ)=axis(Lᵢ).
+- Image compatibility: for every i∈ I,
+  F(ϕ_{T_{ρ}}(Tᵢ))=ψ_{T_{ρ}}(Tᵢ).
+- Containment in the ordinary target: for every i∈ I,
+  ψ_{T_{ρ}}(Tᵢ)⊆ Uᵢ.
+- Convex pullback: F⁻¹(W) is convex for every convex set W⊆ℝ³.
+- Volume bound: for every set W⊆ℝ³,
+  |F⁻¹(W)|≤ J|W|.
+
+Here tubes in the image and containment formulas mean their ordinary closed tube carriers.
+
+If the indexed family (ϕ_{T_{ρ}}(Tᵢ))_{i∈ I} satisfies the CWA with error C, then \(\mathbb U\) satisfies the CWA with error JC. (Kakeya.Assouad.WZ2PaperAssouadToLiteralRescalingCertificate.public_convexWolff)
+
+The certificate takes J as a parameter. The corresponding existence statement requires a fixed finite J≥1, independent of the scales, parent and source family. (Kakeya.Assouad.WZ2PaperAssouadToLiteralRescalingStatement)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODgzOTUxNTg3XX0=
+eyJoaXN0b3J5IjpbLTEwMTYxOTc5MjldfQ==
 -->
