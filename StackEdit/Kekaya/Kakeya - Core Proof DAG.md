@@ -189,9 +189,10 @@ Basic Definitions:
 - `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o, \epsilon_a, \kappa, \eta_a, \delta$, fix constant $C \in [0, +\infty]$ and $(\mathbb T, Y)_\delta$. This structure bundles:
 	- a $\rho_0 \in [\delta, 1]$, a $\rho \in [\rho_0, C \rho_0)$ s.t., $\mathbb T$ satisfies CWA at actual selected scale $\rho$ with error $C$ (this gives a $\mathbb T_\rho$)
 	- a $T_\rho \in \mathbb T_\rho$ satisfying:
-		- $\mathbb T[T_\rho] \n$
+		- $\mathbb T[T_\rho] \neq \empty$
+		-  The unit rescaling of $\mathbb T[T_\rho]$ relative to $T_\rho$ satisfies the CWA with error $C$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0NDI1MjU2MiwtMzQxNzgwMzQwLC0xOD
-M1Mjc0NTYwLC0xNjk0Njg5ODQ2LC04NTgyMjIxNSwtMzI4NzQw
-NTUsMTE1NTA3MzAyM119
+eyJoaXN0b3J5IjpbMjQ2MDk1NDg1LC0zNDE3ODAzNDAsLTE4Mz
+UyNzQ1NjAsLTE2OTQ2ODk4NDYsLTg1ODIyMjE1LC0zMjg3NDA1
+NSwxMTU1MDczMDIzXX0=
 -->
