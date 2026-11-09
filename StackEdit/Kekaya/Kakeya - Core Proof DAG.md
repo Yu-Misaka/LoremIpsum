@@ -176,8 +176,9 @@ Basic Definitions:
 - `Kakeya.Assouad.WZ2PaperLiteralUnitRescaledFamilyData`: Let $\mathbb T$ be a family of $\delta$-tubes, $\rho > 0, T_\rho$ be a $\rho$-tube. This structure admits a target family of $\delta/\rho$-tubes $\mathbb T_{\delta/\rho}$ in $\mathcal L_3$ and a bijection $f : \mathbb T_{\delta/\rho} \rightarrow \mathbb T$ satisfying:
 	- $\forall T_{\delta/\rho} \in \mathbb T_{\delta/\rho}$,  $l_{T_{\delta/\rho}}=\varphi_{T_{\delta/\rho}}(l_{f(T_{\delta/\rho})})$
 - `Kakeya.Assouad.WZ2PaperAssouadToLiteralRescalingCertificate`: Let $\mathbb T$ be a family of $\delta$-tubes, $\rho > 0, T_\rho$ be a $\rho$-tube. Suppose there is a `WZ2PaperLiteralUnitRescaledFamilyData` on this setting. And set $C_j$ a constant in $[0, +\infty]$. Then this structure admits another family of $\delta/\rho$-tube $\mathbb T'_{\delta/\rho}$ together with two bijections: $g_1 : \mathbb T'_{\delta/\rho} \rightarrow \mathbb T, g_2 : \mathbb T_{\delta/\rho} \rightarrow T'_{\delta/\rho}$ satisfying:
-	- $\forall T_{\delta/\rho} \in \mathbb T_{\delta/\rho}, g_1(g_2(T_{\delta/\rho}))=f()$
+	- $g_1 \circ g_2 =f$
+	- $l$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2MTQyODk2NywtMzI4NzQwNTUsMTE1NT
-A3MzAyM119
+eyJoaXN0b3J5IjpbLTIxMTY3MjI3MjIsLTMyODc0MDU1LDExNT
+UwNzMwMjNdfQ==
 -->
