@@ -185,8 +185,8 @@ Basic Definitions:
 - `Kakeya.Assouad.WZ2PaperPureOneScaleRescalingBridge`: Let $\mathbb T$ be a family of $\delta$-tubes, $\mathbb T_\rho$ be a family of $\rho$-tubes with $0 < \rho$. Fix a $T_\rho \in \mathbb T_\rho$ and a constant $C \in [0, +\infty]$. Then this structure admits:
 	- a `WZ2PaperLiteralUnitRescaledFamilyData` on $(\mathbb T[T_\rho], T_\rho)$
 	- a `WZ2PaperAssouadToLiteralRescalingCertificate` on the aforementioned data with $C_j = 4000000$
-	- $\mathbb T[T_\rho]'_{\delta/\rho}$ satisfies 
+	- $\mathbb T[T_\rho]'_{\delta/\rho}$ satisfies CWA with error $4000000C$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjYzMDMwMjYsLTg1ODIyMjE1LC0zMj
-g3NDA1NSwxMTU1MDczMDIzXX0=
+eyJoaXN0b3J5IjpbLTgyMTU5NTE3OCwtODU4MjIyMTUsLTMyOD
+c0MDU1LDExNTUwNzMwMjNdfQ==
 -->
