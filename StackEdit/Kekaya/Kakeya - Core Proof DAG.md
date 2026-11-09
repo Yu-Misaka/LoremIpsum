@@ -175,7 +175,7 @@ Basic Definitions:
 8. **$\mathcal L_3$**: a $\delta$-tube $T$ is in $\mathcal L_3$ if $1/2 \leq \tilde {\textbf d_3}, |A_1| \leq 1/3$ and $|A_2| \leq 1/3$ (`Kakeya.Assouad.WZ1PaperTubeInLineClass`)
 - `Kakeya.Assouad.WZ2PaperLiteralUnitRescaledFamilyData`: Let $\mathbb T$ be a family of $\delta$-tubes, $\rho > 0, T_\rho$ be a $\rho$-tube. This structure admits a target family of $\delta/\rho$-tubes $\mathbb T_{\delta/\rho}$ in $\mathcal L_3$ and a bijection $f : \mathbb T_{\delta/\rho} \rightarrow \mathbb T$ satisfying:
 	- $\forall T_{\delta/\rho} \in \mathbb T_{\delta/\rho}$,  $l_{T_{\delta/\rho}}=\varphi_{T_{\delta/\rho}}(l_{f(T_{\delta/\rho})})$
-- `Kakeya.Assouad.WZ2PaperAssouadToLiteralRescalingCertificate`: Let $\mathbb T$ be a family of $\delta$-tubes, $\rho > 0, T_\rho$ be a $\rho$-tube
+- `Kakeya.Assouad.WZ2PaperAssouadToLiteralRescalingCertificate`: Let $\mathbb T$ be a family of $\delta$-tubes, $\rho > 0, T_\rho$ be a $\rho$-tube. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2OTg0NTU1LDExNTUwNzMwMjNdfQ==
+eyJoaXN0b3J5IjpbLTMyODc0MDU1LDExNTUwNzMwMjNdfQ==
 -->
