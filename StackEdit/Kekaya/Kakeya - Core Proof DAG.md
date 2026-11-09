@@ -44,7 +44,7 @@ Basic Definitions:
 3. **$\mathbb T[T_\rho]$**: $\{T \in \mathbb T : T \subseteq T_\rho\}$ (`Kakeya.Assouad.wz2PaperOrdinaryFullFiberIndices`)
 4. **Unit rescaling**: 
 	- Ellipsoid (centered at $\textbf c$ under linear equivalence $A$): $\textbf c + A(\overline{B(0, 1)})$ (`JohnEllipsoid.ellipsoid`)
-	- Outer John ellipsoid of set $K$: (one of) an ellipsoid of minimum volume containing $K$ (`JohnEllipsoid.IsOuterJohnEllipsoid`)
+	- Outer John ellipsoid of set $K$: an ellipsoid of minimum volume containing $K$ (`JohnEllipsoid.IsOuterJohnEllipsoid`)
 	- Unit rescaling relative to $T_\rho$: choose an outer John ellipsoid of $T_\rho$, suppose it is centered at $\textbf c$ under linear equivalence $A$. Then a unit rescaling relative to $T_\rho$ is affine equivalence $\phi_{T_\rho}: \textbf x \mapsto A^{-1} (\textbf x - \textbf c)$. 
 	- In short, send the outer John ellipsoid of $T_\rho$ back to unit ball at $\textbf 0$. (`Kakeya.Assouad.WZ2PaperAssouadUnitRescalingData.map`)
 5. **Convex Wolff Axioms**: a multi-set $\mathcal S$ of sets in $\mathbb R^3$ satisfies the CWA with error $C$ if for all convex sets $W \subseteq \mathbb R^3$, we have $\# \mathcal S[W] \leq C|W|(\# \mathcal S)$ (`Kakeya.Assouad.WZ2PaperBodyConvexWolffBound`, $C \in [0, +\infty]$)
@@ -183,6 +183,6 @@ Basic Definitions:
 	- $W$ is convex $\Rightarrow h^{-1}(W)$ is convex
 	- $\forall S \subseteq \mathbb R^3, |h(S)| \leq C_j |S|$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4ODI1MzA2MCwtODU4MjIyMTUsLTMyOD
+eyJoaXN0b3J5IjpbMjA2MzAwNjgwNiwtODU4MjIyMTUsLTMyOD
 c0MDU1LDExNTUwNzMwMjNdfQ==
 -->
