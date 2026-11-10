@@ -216,22 +216,12 @@ For the remaining statements, write $H_\eta(\delta,\mathbb T,Y)$ for the conjunc
 - $\mathbb T$ satisfies CWA at nearby scales with error $\delta^{-\eta}$
 - $(\mathbb T,Y)$ is $\delta^\eta$-dense
 
-
-
-----
-- `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o, \epsilon_a, \kappa, \eta_a, \delta$, fix constant $C \in [0, +\infty]$ and $(\mathbb T, Y)_\delta$. This structure bundles:
-	- a $\rho_0 \in [\delta, 1]$, a $\rho \in [\rho_0, C \rho_0)$ s.t., $\mathbb T$ satisfies CWA at actual selected scale $\rho$ with error $C$ (this gives a $\mathbb T_\rho$)
-	- a $T_\rho \in \mathbb T_\rho$ satisfying:
-		- $\mathbb T[T_\rho] \neq \empty$
-		-  The unit rescaling of $\mathbb T[T_\rho]$ relative to $T_\rho$ satisfies the CWA with error $C$
-	- a `WZ2PaperPureOneScaleRescalingBridge` on $(\mathbb T, \mathbb T_\rho, T_\rho, C)$
-	- a restriction that $0 < \delta / \rho \leq 1$
-	- a shading $Y_{\delta/\rho}'$ on $\mathbb T_{\delta/\rho}'$
+-  `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementStatement`: For every
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTMxODc2NjU4LDExNDg3MzQ2MzgsNTg3MT
-g0NTQzLC01NDczNjc0NDMsLTU0NzM2NzQ0MywtMzQxNzgwMzQw
-LC0xODM1Mjc0NTYwLC0xNjk0Njg5ODQ2LC04NTgyMjIxNSwtMz
-I4NzQwNTUsMTE1NTA3MzAyM119
+eyJoaXN0b3J5IjpbLTEzNzgyNTQ2OSwxMTQ4NzM0NjM4LDU4Nz
+E4NDU0MywtNTQ3MzY3NDQzLC01NDczNjc0NDMsLTM0MTc4MDM0
+MCwtMTgzNTI3NDU2MCwtMTY5NDY4OTg0NiwtODU4MjIyMTUsLT
+MyODc0MDU1LDExNTUwNzMwMjNdfQ==
 -->
