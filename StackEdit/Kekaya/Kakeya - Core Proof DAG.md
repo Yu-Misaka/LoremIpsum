@@ -225,7 +225,7 @@ $$
 \delta^{1/2+\epsilon_o}\leq|\bigcup_TY|,
 $$
 or there exists a `PureWZ2FullFiberAssertionDRefinementData` with parameters $(\epsilon_o,\epsilon_a,\kappa,\eta_a,\delta)$ and $C=\delta^{-\eta_{in}}$
-4. **Assertion D lower bound**: For a **de-duplicated** family $\mathbb F$ of $\delta$-tubes, a shading $Y$, and real parameters $\kappa,\sigma,\omega,\epsilon$, the Assertion D lower bound is
+9. **Assertion D lower bound**: For a **de-duplicated** family $\mathbb F$ of $\delta$-tubes, a shading $Y$, and real parameters $\kappa,\sigma,\omega,\epsilon$, the Assertion D lower bound is
 $$
 |\bigcup_TY|
 \geq
@@ -234,16 +234,17 @@ $$
 \bigl((\#\mathbb F)v_\delta^{1/2}\bigr)^{-\sigma},
 $$
 where $v_\delta$ is the common tube volume. Formally, $\kappa$ is interpreted as $\operatorname{ofReal}(\kappa)$, and the expression takes values in $[0,+\infty]$. (`Kakeya.AssertionDLowerBound`)
-5. **Assertion $D(\sigma,\omega)$**: We have $\sigma,\omega\geq0$, and for every $\epsilon>0$, there exist $\kappa,\eta>0$ such that the following holds for every $\delta>0$ and every **de-duplicated** configuration $(\mathbb F,Y)_\delta$:
+10. **Assertion $D(\sigma,\omega)$**: We have $\sigma,\omega\geq0$, and for every $\epsilon>0$, there exist $\kappa,\eta>0$ such that the following holds for every $\delta>0$ and every **de-duplicated** configuration $(\mathbb F,Y)_\delta$:
 	- every tube in $\mathbb F$ is contained in $\overline{B(0,1)}$
 	- $\mathbb F$ is essentially distinct **(2025)**
 	- $(\mathbb F,Y)$ is $\delta^\eta$-dense
 	- $\mathbb F$ satisfies the Katz–Tao convex Wolff bound with constant $\delta^{-\eta}$
 	- $\mathbb F$ satisfies the Frostman slab Wolff bound with constant $\delta^{-\eta}$
 Then the Assertion D lower bound holds with parameters $(\kappa,\sigma,\omega,\epsilon)$. (`Kakeya.AssertionD`)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDQwMzUxMDAsMTE0ODczNDYzOCw1OD
-cxODQ1NDMsLTU0NzM2NzQ0MywtNTQ3MzY3NDQzLC0zNDE3ODAz
-NDAsLTE4MzUyNzQ1NjAsLTE2OTQ2ODk4NDYsLTg1ODIyMjE1LC
-0zMjg3NDA1NSwxMTU1MDczMDIzXX0=
+eyJoaXN0b3J5IjpbLTg0Mzg1NTI2NSwxMTQ4NzM0NjM4LDU4Nz
+E4NDU0MywtNTQ3MzY3NDQzLC01NDczNjc0NDMsLTM0MTc4MDM0
+MCwtMTgzNTI3NDU2MCwtMTY5NDY4OTg0NiwtODU4MjIyMTUsLT
+MyODc0MDU1LDExNTUwNzMwMjNdfQ==
 -->
