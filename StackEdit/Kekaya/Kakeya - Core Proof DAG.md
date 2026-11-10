@@ -183,14 +183,14 @@ Basic Definitions:
 	- $W$ is convex $\Rightarrow h^{-1}(W)$ is convex
 	- $\forall S \subseteq \mathbb R^3, |h^{-1}(S)| \leq C_j |S|$
 - `Kakeya.Assouad.WZ2PaperPureOneScaleRescalingBridge`: Let $\mathbb T$ be a family of $\delta$-tubes, $\mathbb T_\rho$ be a family of $\rho$-tubes with $0 < \rho$. Fix a $T_\rho \in \mathbb T_\rho$ and a constant $C \in [0, +\infty]$. Then this structure admits:
-	- a `WZ2PaperLiteralUnitRescaledFamilyData` on $(\mathbb T[T_\rho], T_\rho)$
+	- a `WZ2PaperLiteralUnitRescaledFamilyData` on $(\mathbb T[T_\rho], T_\rho)$, public indexed family is written as $\mathbb P_q$
 	- a `WZ2PaperAssouadToLiteralRescalingCertificate` on the aforementioned data with $C_j = 4000000$
 	- $\mathbb P_q$ satisfies CWA with error $4000000C$
 -  `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o,\epsilon_a,\kappa,\eta_a,\delta\in\mathbb R$, a constant $C\in[0,+\infty]$, and $(\mathbb T,Y)_\delta$. This structure bundles:
 	- a requested scale $\rho_0\in[\delta,1]$ and an actual selected scale $\rho\in[\rho_0,C\rho_0)$, together with a witness that $\mathbb T$ satisfies CWA at actual selected scale $\rho$ with error $C$. Write $\mathbb T_\rho$ for its coarse family
 	- a parent $T_\rho\in\mathbb T_\rho$ whose full fiber $\mathbb T[T_\rho]$ is nonempty
 	- a John unit rescaling $\phi_{T_\rho}$ under which $\mathbb T[T_\rho]$ satisfies CWA with error $C$
-	- a `WZ2PaperPureOneScaleRescalingBridge` on $(\mathbb T,\mathbb T_\rho,T_\rho,C)$. Write $\mathbb P_q$ for its public indexed family of $q$-tubes, where $q=\delta/\rho$, and let $b$ be its bijection to the source indices in the full fiber
+	- a `WZ2PaperPureOneScaleRescalingBridge` on $(\mathbb T,\mathbb T_\rho,T_\rho,C)$. Write $\mathbb P_q$ for its public indexed family of $\delta/\rho$-tubes, and let $b$ be its bijection to the source indices in the full fiber
 
 ----
 - `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o, \epsilon_a, \kappa, \eta_a, \delta$, fix constant $C \in [0, +\infty]$ and $(\mathbb T, Y)_\delta$. This structure bundles:
@@ -204,8 +204,8 @@ Basic Definitions:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODMwMjA2MDMsNTg3MTg0NTQzLC01ND
-czNjc0NDMsLTU0NzM2NzQ0MywtMzQxNzgwMzQwLC0xODM1Mjc0
-NTYwLC0xNjk0Njg5ODQ2LC04NTgyMjIxNSwtMzI4NzQwNTUsMT
-E1NTA3MzAyM119
+eyJoaXN0b3J5IjpbMTE0ODczNDYzOCw1ODcxODQ1NDMsLTU0Nz
+M2NzQ0MywtNTQ3MzY3NDQzLC0zNDE3ODAzNDAsLTE4MzUyNzQ1
+NjAsLTE2OTQ2ODk4NDYsLTg1ODIyMjE1LC0zMjg3NDA1NSwxMT
+U1MDczMDIzXX0=
 -->
