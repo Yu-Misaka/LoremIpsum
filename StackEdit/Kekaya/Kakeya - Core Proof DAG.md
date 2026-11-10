@@ -212,16 +212,21 @@ Basic Definitions:
 
 For the remaining statements, write $H_\eta(\delta,\mathbb T,Y)$ for the conjunction:
 
-- $\mathbb T$ is nonempty
-- $\mathbb T$ satisfies CWA at nearby scales with error $\delta^{-\eta}$
-- $(\mathbb T,Y)$ is $\delta^\eta$-dense
+1. $\mathbb T$ is nonempty
+2. $\mathbb T$ satisfies CWA at nearby scales with error $\delta^{-\eta}$
+3. $(\mathbb T,Y)$ is $\delta^\eta$-dense
 
--  `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementStatement`: For every
+- `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementStatement`: For every
+
+$$
+0<\epsilon_a<\epsilon_o,\qquad  \kappa>0,\qquad\eta_a>0,
+$$
+
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNzgyNTQ2OSwxMTQ4NzM0NjM4LDU4Nz
-E4NDU0MywtNTQ3MzY3NDQzLC01NDczNjc0NDMsLTM0MTc4MDM0
-MCwtMTgzNTI3NDU2MCwtMTY5NDY4OTg0NiwtODU4MjIyMTUsLT
-MyODc0MDU1LDExNTUwNzMwMjNdfQ==
+eyJoaXN0b3J5IjpbNjAzMjY0OTE5LDExNDg3MzQ2MzgsNTg3MT
+g0NTQzLC01NDczNjc0NDMsLTU0NzM2NzQ0MywtMzQxNzgwMzQw
+LC0xODM1Mjc0NTYwLC0xNjk0Njg5ODQ2LC04NTgyMjIxNSwtMz
+I4NzQwNTUsMTE1NTA3MzAyM119
 -->
