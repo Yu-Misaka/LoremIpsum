@@ -196,7 +196,8 @@ Basic Definitions:
 	- a nonempty indexed subfamily $\mathbb S_q$ of $\mathbb P_q$, with index embedding $\iota$, and a shading $Y^{sel}$ satisfying $Y^{sel}(S)\subseteq Y^{pub}(\iota(S)), S\in\mathbb S_q$
 	- $q^{\epsilon_a}\#\mathbb P_q\leq\#\mathbb S_q$ and $q^{\epsilon_a}\sum_T Y^{pub}(T)\leq \sum_T Y^{sel}(T)$
 	- a **de-duplicated** family $\mathbb F_q$ of $q$-tubes and a bijection $j$ from its members to the indices of $\mathbb S_q$, satisfying $T=\mathbb S_q(j(T)), T\in\mathbb F_q$
-	- $\Psi\bigl(\mathbb T(b(\iota(j(T))))\bigr)$
+	- $\Psi\bigl(\mathbb T(b(\iota(j(T))))\bigr) \subseteq T, T\in\mathbb F_q$
+	- a shading $Y^{tar}$ on $\mathbb F_q$ satisfying
 ----
 - `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o, \epsilon_a, \kappa, \eta_a, \delta$, fix constant $C \in [0, +\infty]$ and $(\mathbb T, Y)_\delta$. This structure bundles:
 	- a $\rho_0 \in [\delta, 1]$, a $\rho \in [\rho_0, C \rho_0)$ s.t., $\mathbb T$ satisfies CWA at actual selected scale $\rho$ with error $C$ (this gives a $\mathbb T_\rho$)
@@ -209,8 +210,8 @@ Basic Definitions:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzU0MTE2NTM0LDExNDg3MzQ2MzgsNTg3MT
-g0NTQzLC01NDczNjc0NDMsLTU0NzM2NzQ0MywtMzQxNzgwMzQw
-LC0xODM1Mjc0NTYwLC0xNjk0Njg5ODQ2LC04NTgyMjIxNSwtMz
-I4NzQwNTUsMTE1NTA3MzAyM119
+eyJoaXN0b3J5IjpbLTUyOTA0Nzc0MSwxMTQ4NzM0NjM4LDU4Nz
+E4NDU0MywtNTQ3MzY3NDQzLC01NDczNjc0NDMsLTM0MTc4MDM0
+MCwtMTgzNTI3NDU2MCwtMTY5NDY4OTg0NiwtODU4MjIyMTUsLT
+MyODc0MDU1LDExNTUwNzMwMjNdfQ==
 -->
