@@ -190,7 +190,7 @@ Basic Definitions:
 	- a requested scale $\rho_0\in[\delta,1]$ and an actual selected scale $\rho\in[\rho_0,C\rho_0)$, together with a witness that $\mathbb T$ satisfies CWA at actual selected scale $\rho$ with error $C$. Write $\mathbb T_\rho$ for its coarse family
 	- a parent $T_\rho\in\mathbb T_\rho$ whose full fiber $\mathbb T[T_\rho]$ is nonempty
 	- a John unit rescaling $\phi_{T_\rho}$ under which $\mathbb T[T_\rho]$ satisfies CWA with error $C$
-	- a `WZ2PaperPureOneScaleRescalingBridge` on $(\mathbb T,\mathbb T_\rho,T_\rho,C)$. Write $\mathbb P_q$ for its public indexed family of $\delta/\rho$-tubes, and let $b$ be its bijection to the source indices in the full fiber
+	- a `WZ2PaperPureOneScaleRescalingBridge` on $(\mathbb T,\mathbb T_\rho,T_\rho,C)$. Write $\mathbb P_q$ for its public indexed family of $\delta/\rho$-tubes, and let $g_1$ be its bijection to $$
 
 ----
 - `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o, \epsilon_a, \kappa, \eta_a, \delta$, fix constant $C \in [0, +\infty]$ and $(\mathbb T, Y)_\delta$. This structure bundles:
@@ -204,8 +204,8 @@ Basic Definitions:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0ODczNDYzOCw1ODcxODQ1NDMsLTU0Nz
-M2NzQ0MywtNTQ3MzY3NDQzLC0zNDE3ODAzNDAsLTE4MzUyNzQ1
-NjAsLTE2OTQ2ODk4NDYsLTg1ODIyMjE1LC0zMjg3NDA1NSwxMT
-U1MDczMDIzXX0=
+eyJoaXN0b3J5IjpbMTE4MzYyNDY4NSwxMTQ4NzM0NjM4LDU4Nz
+E4NDU0MywtNTQ3MzY3NDQzLC01NDczNjc0NDMsLTM0MTc4MDM0
+MCwtMTgzNTI3NDU2MCwtMTY5NDY4OTg0NiwtODU4MjIyMTUsLT
+MyODc0MDU1LDExNTUwNzMwMjNdfQ==
 -->
