@@ -189,7 +189,8 @@ Basic Definitions:
 -  `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o,\epsilon_a,\kappa,\eta_a,\delta\in\mathbb R$, a constant $C\in[0,+\infty]$, and $(\mathbb T,Y)_\delta$. This structure bundles:
 	- a requested scale $\rho_0\in[\delta,1]$ and an actual selected scale $\rho\in[\rho_0,C\rho_0)$, together with a witness that $\mathbb T$ satisfies CWA at actual selected scale $\rho$ with error $C$. Write $\mathbb T_\rho$ for its coarse family
 	- a parent $T_\rho\in\mathbb T_\rho$ whose full fiber $\mathbb T[T_\rho]$ is nonempty
-	- a John unit rescaling $\phi_{T_\rho}$ under which the full fiber satisfies CWA with error $C$
+	- a John unit rescaling $\phi_{T_\rho}$ under which $\mathbb T[T_\rho]$ satisfies CWA with error $C$
+	- a `WZ2PaperPureOneScaleRescalingBridge` on $(\mathbb T,\mathbb T_\rho,T_\rho,C)$. Write $\mathbb P_q$ for its public indexed family of $q$-tubes, where $q=\delta/\rho$, and let $b$ be its bijection to the source indices in the full fiber
 
 ----
 - `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o, \epsilon_a, \kappa, \eta_a, \delta$, fix constant $C \in [0, +\infty]$ and $(\mathbb T, Y)_\delta$. This structure bundles:
@@ -203,8 +204,7 @@ Basic Definitions:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjU3NzA4MjIsLTU0NzM2NzQ0MywtNT
-Q3MzY3NDQzLC0zNDE3ODAzNDAsLTE4MzUyNzQ1NjAsLTE2OTQ2
-ODk4NDYsLTg1ODIyMjE1LC0zMjg3NDA1NSwxMTU1MDczMDIzXX
-0=
+eyJoaXN0b3J5IjpbNTg3MTg0NTQzLC01NDczNjc0NDMsLTU0Nz
+M2NzQ0MywtMzQxNzgwMzQwLC0xODM1Mjc0NTYwLC0xNjk0Njg5
+ODQ2LC04NTgyMjIxNSwtMzI4NzQwNTUsMTE1NTA3MzAyM119
 -->
