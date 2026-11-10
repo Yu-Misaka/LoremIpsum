@@ -207,7 +207,17 @@ Basic Definitions:
 		- $q^{-2+\epsilon_a}\leq\#\mathbb F_q$
 	- a factor $\beta\in(0,+\infty)$, recorded as `pullbackFactor`, satisfying the two transfer inequalities:
 		- $\delta^{1/2+\epsilon_o} \leq \beta\,\kappa q^{\epsilon_a} N v_q\bigl(Nv_q^{1/2}\bigr)^{-1/2}$
-		- 
+		- $\beta\,|\bigcup_T{Y^{tar}}|\leq|\bigcup_TY|$
+		- where $N=\#\mathbb F_q$ and $v_q$ is the common volume of a $q$-tube
+
+For the remaining statements, write $H_\eta(\delta,\mathbb T,Y)$ for the conjunction:
+
+- $\mathbb T$ is nonempty
+- $\mathbb T$ satisfies CWA at nearby scales with error $\delta^{-\eta}$
+- $(\mathbb T,Y)$ is $\delta^\eta$-dense
+
+
+
 ----
 - `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o, \epsilon_a, \kappa, \eta_a, \delta$, fix constant $C \in [0, +\infty]$ and $(\mathbb T, Y)_\delta$. This structure bundles:
 	- a $\rho_0 \in [\delta, 1]$, a $\rho \in [\rho_0, C \rho_0)$ s.t., $\mathbb T$ satisfies CWA at actual selected scale $\rho$ with error $C$ (this gives a $\mathbb T_\rho$)
@@ -220,8 +230,8 @@ Basic Definitions:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODg3NDI4NjcsMTE0ODczNDYzOCw1OD
-cxODQ1NDMsLTU0NzM2NzQ0MywtNTQ3MzY3NDQzLC0zNDE3ODAz
-NDAsLTE4MzUyNzQ1NjAsLTE2OTQ2ODk4NDYsLTg1ODIyMjE1LC
-0zMjg3NDA1NSwxMTU1MDczMDIzXX0=
+eyJoaXN0b3J5IjpbOTMxODc2NjU4LDExNDg3MzQ2MzgsNTg3MT
+g0NTQzLC01NDczNjc0NDMsLTU0NzM2NzQ0MywtMzQxNzgwMzQw
+LC0xODM1Mjc0NTYwLC0xNjk0Njg5ODQ2LC04NTgyMjIxNSwtMz
+I4NzQwNTUsMTE1NTA3MzAyM119
 -->
