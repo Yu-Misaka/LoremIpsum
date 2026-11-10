@@ -256,11 +256,19 @@ $$
 $$
 and a configuration satisfying $H_\eta(\delta,\mathbb T,Y)$ such that
 $$
-|E_Y|\leq\delta^s.
-
+|\bigcup_TY|\leq\delta^s
 $$
+(`Kakeya.Assouad.PureWZ2Admissible`)
+-  `Kakeya.Assouad.PureWZ2WolffFloorImpliesSubunitCeilingStatement`: The pure Wolff volume floor implies that there exists a real number $a<1$ such that $Bad(a)$ fails.
+-  `Kakeya.Assouad.PureWZ2SubunitPackageStatement`: This statement is the conjunction of:
+	-  `PureWZ2FullFiberAssertionDRefinementStatement`
+	-  `PureWZ2WolffFloorFromAssertionDStatement`
+	-  `PureWZ2WolffFloorImpliesSubunitCeilingStatement`
+	- the pure Wolff volume floor
+	- the existence of $a<1$ such that $Bad(a)$ fails.
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2OTQyMzk4OSwxMTQ4NzM0NjM4LDU4Nz
+eyJoaXN0b3J5IjpbMTgxMjM4NDgxMSwxMTQ4NzM0NjM4LDU4Nz
 E4NDU0MywtNTQ3MzY3NDQzLC01NDczNjc0NDMsLTM0MTc4MDM0
 MCwtMTgzNTI3NDU2MCwtMTY5NDY4OTg0NiwtODU4MjIyMTUsLT
 MyODc0MDU1LDExNTUwNzMwMjNdfQ==
