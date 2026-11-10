@@ -250,9 +250,17 @@ $$
 \delta^\epsilon\leq|\bigcup_TY|
 $$
 (`Kakeya.Assouad.PureWZ2Theorem5_2Statement`)
+13.  **Admissible exponent / $Bad(s)$**: A real exponent $s$ is admissible if, for every $\eta>0$ and every $\delta_0>0$, there exist
+$$
+0<\delta\leq\min(\delta_0,1)
+$$
+and a configuration satisfying $H_\eta(\delta,\mathbb T,Y)$ such that
+$$
+|E_Y|\leq\delta^s.
 
+$$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODE2MTUxNywxMTQ4NzM0NjM4LDU4Nz
+eyJoaXN0b3J5IjpbLTU2OTQyMzk4OSwxMTQ4NzM0NjM4LDU4Nz
 E4NDU0MywtNTQ3MzY3NDQzLC01NDczNjc0NDMsLTM0MTc4MDM0
 MCwtMTgzNTI3NDU2MCwtMTY5NDY4OTg0NiwtODU4MjIyMTUsLT
 MyODc0MDU1LDExNTUwNzMwMjNdfQ==
