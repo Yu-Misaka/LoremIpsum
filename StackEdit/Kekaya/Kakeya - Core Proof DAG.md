@@ -183,9 +183,9 @@ Basic Definitions:
 	- $W$ is convex $\Rightarrow h^{-1}(W)$ is convex
 	- $\forall S \subseteq \mathbb R^3, |h^{-1}(S)| \leq C_j |S|$
 - `Kakeya.Assouad.WZ2PaperPureOneScaleRescalingBridge`: Let $\mathbb T$ be a family of $\delta$-tubes, $\mathbb T_\rho$ be a family of $\rho$-tubes with $0 < \rho$. Fix a $T_\rho \in \mathbb T_\rho$ and a constant $C \in [0, +\infty]$. Then this structure admits:
-	- a `WZ2PaperLiteralUnitRescaledFamilyData` on $(\mathbb T[T_\rho], T_\rho)$, public indexed family is written as $\mathbb P_q$
+	- a `WZ2PaperLiteralUnitRescaledFamilyData` on $(\mathbb T[T_\rho], T_\rho)$, public indexed family is written as $\mathbb T_q$
 	- a `WZ2PaperAssouadToLiteralRescalingCertificate` on the aforementioned data with $C_j = 4000000$
-	- $\mathbb P_q$ satisfies CWA with error $4000000C$
+	- $\mathbb T_q$ satisfies CWA with error $4000000C$
 -  `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o,\epsilon_a,\kappa,\eta_a,\delta\in\mathbb R$, a constant $C\in[0,+\infty]$, and $(\mathbb T,Y)_\delta$. This structure bundles:
 	- a requested scale $\rho_0\in[\delta,1]$ and an actual selected scale $\rho\in[\rho_0,C\rho_0)$, together with a witness that $\mathbb T$ satisfies CWA at actual selected scale $\rho$ with error $C$. Write $\mathbb T_\rho$ for its coarse family
 	- a parent $T_\rho\in\mathbb T_\rho$ whose full fiber $\mathbb T[T_\rho]$ is nonempty
@@ -268,8 +268,14 @@ $$
 	- the existence of $a<1$ such that $Bad(a)$ fails.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxMjM4NDgxMSwxMTQ4NzM0NjM4LDU4Nz
-E4NDU0MywtNTQ3MzY3NDQzLC01NDczNjc0NDMsLTM0MTc4MDM0
-MCwtMTgzNTI3NDU2MCwtMTY5NDY4OTg0NiwtODU4MjIyMTUsLT
-MyODc0MDU1LDExNTUwNzMwMjNdfQ==
+eyJkaXNjdXNzaW9ucyI6eyJvVW9YWUpTQ1k5YW92N2dZIjp7In
+N0YXJ0IjoxMzIwMywiZW5kIjoxMzIyNywidGV4dCI6IldBIHdp
+dGggZXJyb3IgJDQwMDAwMDBDJCJ9fSwiY29tbWVudHMiOnsiSE
+w5WktuQWNEaDlKT2JQdCI6eyJkaXNjdXNzaW9uSWQiOiJvVW9Y
+WUpTQ1k5YW92N2dZIiwic3ViIjoiZ2g6MTA5MzY1NzIzIiwidG
+V4dCI6Ij8iLCJjcmVhdGVkIjoxNzk0Mjc2NzQ0OTUyfX0sImhp
+c3RvcnkiOlsxNzIyNDQ3ODcxLDE4MTIzODQ4MTEsMTE0ODczND
+YzOCw1ODcxODQ1NDMsLTU0NzM2NzQ0MywtNTQ3MzY3NDQzLC0z
+NDE3ODAzNDAsLTE4MzUyNzQ1NjAsLTE2OTQ2ODk4NDYsLTg1OD
+IyMjE1LC0zMjg3NDA1NSwxMTU1MDczMDIzXX0=
 -->
