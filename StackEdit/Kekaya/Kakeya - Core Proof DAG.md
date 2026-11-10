@@ -195,7 +195,8 @@ Basic Definitions:
 	- a shading $Y^{pub}$ on $\mathbb P_q$ satisfying $Y^{pub}(P) \subseteq \Psi\bigl(Y(b(P))\bigr), P\in\mathbb P_q$ where $\Psi=h\circ\phi_{T_\rho}$ and $h$ is the affine coordinate change recorded by the bridge
 	- a nonempty indexed subfamily $\mathbb S_q$ of $\mathbb P_q$, with index embedding $\iota$, and a shading $Y^{sel}$ satisfying $Y^{sel}(S)\subseteq Y^{pub}(\iota(S)), S\in\mathbb S_q$
 	- $q^{\epsilon_a}\#\mathbb P_q\leq\#\mathbb S_q$ and $q^{\epsilon_a}\sum_T Y^{pub}(T)\leq \sum_T Y^{sel}(T)$
-	- a **de-duplicated** family $\mathbb F_q$ of $q$-tubes and a bijection $j$ from its members to the indices of $\mathbb S_q$, satisfying
+	- a **de-duplicated** family $\mathbb F_q$ of $q$-tubes and a bijection $j$ from its members to the indices of $\mathbb S_q$, satisfying $T=\mathbb S_q(j(T)), T\in\mathbb F_q$
+	- $\Psi\bigl(\mathbb T(b(\iota(j(T))))\bigr)$
 ----
 - `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o, \epsilon_a, \kappa, \eta_a, \delta$, fix constant $C \in [0, +\infty]$ and $(\mathbb T, Y)_\delta$. This structure bundles:
 	- a $\rho_0 \in [\delta, 1]$, a $\rho \in [\rho_0, C \rho_0)$ s.t., $\mathbb T$ satisfies CWA at actual selected scale $\rho$ with error $C$ (this gives a $\mathbb T_\rho$)
@@ -208,8 +209,8 @@ Basic Definitions:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjg5NzMxMjAsMTE0ODczNDYzOCw1OD
-cxODQ1NDMsLTU0NzM2NzQ0MywtNTQ3MzY3NDQzLC0zNDE3ODAz
-NDAsLTE4MzUyNzQ1NjAsLTE2OTQ2ODk4NDYsLTg1ODIyMjE1LC
-0zMjg3NDA1NSwxMTU1MDczMDIzXX0=
+eyJoaXN0b3J5IjpbNzU0MTE2NTM0LDExNDg3MzQ2MzgsNTg3MT
+g0NTQzLC01NDczNjc0NDMsLTU0NzM2NzQ0MywtMzQxNzgwMzQw
+LC0xODM1Mjc0NTYwLC0xNjk0Njg5ODQ2LC04NTgyMjIxNSwtMz
+I4NzQwNTUsMTE1NTA3MzAyM119
 -->
