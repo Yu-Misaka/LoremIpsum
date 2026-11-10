@@ -192,7 +192,9 @@ Basic Definitions:
 	- a John unit rescaling $\phi_{T_\rho}$ under which $\mathbb T[T_\rho]$ satisfies CWA with error $C$
 	- a `WZ2PaperPureOneScaleRescalingBridge` on $(\mathbb T,\mathbb T_\rho,T_\rho,C)$. Write $\mathbb P_q$ for its public indexed family of $\delta/\rho$-tubes, and let $g_1$ be its bijection to $\mathbb T$
 	- the restriction $0<q\leq1$
-	- a shading $Y^{pub}$ on $\mathbb P_q$ satisfying $Y^{pub}(P) \subseteq \Psi\bigl(Y(b(P))\bigr) $
+	- a shading $Y^{pub}$ on $\mathbb P_q$ satisfying $Y^{pub}(P) \subseteq \Psi\bigl(Y(b(P))\bigr), P\in\mathbb P_q$ where $\Psi=h\circ\phi_{T_\rho}$ and $h$ is the affine coordinate change recorded by the bridge
+	- a nonempty indexed subfamily $\mathbb S_q$ of $\mathbb P_q$, with index embedding $\iota$, and a shading $Y^{sel}$ satisfying $Y^{sel}(S)\subseteq Y^{pub}(\iota(S)), S\in\mathbb S_q$
+	- cardinality and shaded-mass retention:
 
 ----
 - `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o, \epsilon_a, \kappa, \eta_a, \delta$, fix constant $C \in [0, +\infty]$ and $(\mathbb T, Y)_\delta$. This structure bundles:
@@ -206,8 +208,8 @@ Basic Definitions:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3OTE3MDE5NCwxMTQ4NzM0NjM4LDU4Nz
-E4NDU0MywtNTQ3MzY3NDQzLC01NDczNjc0NDMsLTM0MTc4MDM0
-MCwtMTgzNTI3NDU2MCwtMTY5NDY4OTg0NiwtODU4MjIyMTUsLT
-MyODc0MDU1LDExNTUwNzMwMjNdfQ==
+eyJoaXN0b3J5IjpbNTM0OTIxODc3LDExNDg3MzQ2MzgsNTg3MT
+g0NTQzLC01NDczNjc0NDMsLTU0NzM2NzQ0MywtMzQxNzgwMzQw
+LC0xODM1Mjc0NTYwLC0xNjk0Njg5ODQ2LC04NTgyMjIxNSwtMz
+I4NzQwNTUsMTE1NTA3MzAyM119
 -->
