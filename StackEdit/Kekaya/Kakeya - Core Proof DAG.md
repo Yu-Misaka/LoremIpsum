@@ -186,6 +186,12 @@ Basic Definitions:
 	- a `WZ2PaperLiteralUnitRescaledFamilyData` on $(\mathbb T[T_\rho], T_\rho)$
 	- a `WZ2PaperAssouadToLiteralRescalingCertificate` on the aforementioned data with $C_j = 4000000$
 	- $\mathbb T[T_\rho]'_{\delta/\rho}$ satisfies CWA with error $4000000C$
+-  `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o,\epsilon_a,\kappa,\eta_a,\delta\in\mathbb R$, a constant $C\in[0,+\infty]$, and $(\mathbb T,Y)_\delta$. This structure bundles:
+	- a requested scale $\rho_0\in[\delta,1]$ and an actual selected scale $\rho\in[\rho_0,C\rho_0)$, together with a witness that $\mathbb T$ satisfies CWA at actual selected scale $\rho$ with error $C$. Write $\mathbb T_\rho$ for its coarse family
+	- a parent $T_\rho\in\mathbb T_\rho$ whose full fiber $\mathbb T[T_\rho]$ is nonempty
+	- a John unit rescaling $\phi_{T_\rho}$ under which the full fiber satisfies CWA with error $C$
+
+----
 - `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementData`: Fix $\epsilon_o, \epsilon_a, \kappa, \eta_a, \delta$, fix constant $C \in [0, +\infty]$ and $(\mathbb T, Y)_\delta$. This structure bundles:
 	- a $\rho_0 \in [\delta, 1]$, a $\rho \in [\rho_0, C \rho_0)$ s.t., $\mathbb T$ satisfies CWA at actual selected scale $\rho$ with error $C$ (this gives a $\mathbb T_\rho$)
 	- a $T_\rho \in \mathbb T_\rho$ satisfying:
@@ -194,9 +200,11 @@ Basic Definitions:
 	- a `WZ2PaperPureOneScaleRescalingBridge` on $(\mathbb T, \mathbb T_\rho, T_\rho, C)$
 	- a restriction that $0 < \delta / \rho \leq 1$
 	- a shading $Y_{\delta/\rho}'$ on $\mathbb T_{\delta/\rho}'$
-	- 
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0NzM2NzQ0MywtNTQ3MzY3NDQzLC0zND
-E3ODAzNDAsLTE4MzUyNzQ1NjAsLTE2OTQ2ODk4NDYsLTg1ODIy
-MjE1LC0zMjg3NDA1NSwxMTU1MDczMDIzXX0=
+eyJoaXN0b3J5IjpbLTE4NjU3NzA4MjIsLTU0NzM2NzQ0MywtNT
+Q3MzY3NDQzLC0zNDE3ODAzNDAsLTE4MzUyNzQ1NjAsLTE2OTQ2
+ODk4NDYsLTg1ODIyMjE1LC0zMjg3NDA1NSwxMTU1MDczMDIzXX
+0=
 -->
