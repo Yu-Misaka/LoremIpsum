@@ -217,16 +217,25 @@ For the remaining statements, write $H_\eta(\delta,\mathbb T,Y)$ for the conjunc
 3. $(\mathbb T,Y)$ is $\delta^\eta$-dense
 
 - `Kakeya.Assouad.PureWZ2FullFiberAssertionDRefinementStatement`: For every
-
 $$
 0<\epsilon_a<\epsilon_o,\qquad  \kappa>0,\qquad\eta_a>0,
 $$
-
-
-
+there exist $\eta_{in}>0$ and $\delta_0\in(0,1]$ such that, for every $0<\delta\leq\delta_0$ and every configuration satisfying $H_{\eta_{in}}(\delta,\mathbb T,Y)$, either
+$$
+\delta^{1/2+\epsilon_o}\leq|\bigcup_TY|,
+$$
+or there exists a `PureWZ2FullFiberAssertionDRefinementData` with parameters $(\epsilon_o,\epsilon_a,\kappa,\eta_a,\delta)$ and $C=\delta^{-\eta_{in}}$
+4. **Assertion D lower bound**: For a **de-duplicated** family $\mathbb F$ of $\delta$-tubes, a shading $Y$, and real parameters $\kappa,\sigma,\omega,\epsilon$, the Assertion D lower bound is
+$$
+|E_Y|
+\geq
+\kappa\,\delta^{\omega+\epsilon}
+(\#\mathbb F)\,v_\delta
+\bigl((\#\mathbb F)v_\delta^{1/2}\bigr)^{-\sigma},
+$$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjAzMjY0OTE5LDExNDg3MzQ2MzgsNTg3MT
-g0NTQzLC01NDczNjc0NDMsLTU0NzM2NzQ0MywtMzQxNzgwMzQw
-LC0xODM1Mjc0NTYwLC0xNjk0Njg5ODQ2LC04NTgyMjIxNSwtMz
-I4NzQwNTUsMTE1NTA3MzAyM119
+eyJoaXN0b3J5IjpbLTIxMzM3MDg5MTAsMTE0ODczNDYzOCw1OD
+cxODQ1NDMsLTU0NzM2NzQ0MywtNTQ3MzY3NDQzLC0zNDE3ODAz
+NDAsLTE4MzUyNzQ1NjAsLTE2OTQ2ODk4NDYsLTg1ODIyMjE1LC
+0zMjg3NDA1NSwxMTU1MDczMDIzXX0=
 -->
