@@ -173,9 +173,10 @@ Basic Definitions:
 		- Let $D$ be transverse anisotropic scaling linear map $(x, y, z) \mapsto (x/\rho, y / \rho, z)$
 		- ... is $\varphi_{T_\rho} : x \mapsto \frac1{100} D(R(x - A))$
 8. **$\mathcal L_3$**: a $\delta$-tube $T$ is in $\mathcal L_3$ if $1/2 \leq \tilde {\textbf d_3}, |A_1| \leq 1/3$ and $|A_2| \leq 1/3$ (`Kakeya.Assouad.WZ1PaperTubeInLineClass`)
-- `Kakeya.Assouad.WZ2PaperLiteralUnitRescaledFamilyData`: Let $\mathbb T$ be a family of $\delta$-tubes, $\rho > 0, T_\rho$ be a $\rho$-tube. This structure admits a target family of $\delta/\rho$-tubes $\mathbb T_{\delta/\rho}$ in $\mathcal L_3$ and a bijection $f : \mathbb T_{\delta/\rho} \rightarrow \mathbb T$ satisfying:
+- `Kakeya.Assouad.WZ2PaperLiteralUnitRescaledFamilyData`: Let $\mathbb T$ be a family of $\delta$-tubes, $\rho > 0, T_\rho$ be a $\rho$-tube. This structure admits a target family of $\delta/\rho$-tubes (write $q=\delta/\rho$) $\mathbb T_q$ in $\mathcal L_3$ and a bijection $f : \mathbb T_q \rightarrow \mathbb T$ satisfying:
+	- $l=$
 	- $\forall T_{\delta/\rho} \in \mathbb T_{\delta/\rho}, l(T_{\delta/\rho})=\varphi_{T_\rho}(l(f(T_{\delta/\rho})))$
-- `Kakeya.Assouad.WZ2PaperAssouadToLiteralRescalingCertificate`: Let $\mathbb T$ be a family of $\delta$-tubes, $\rho > 0, T_\rho$ be a $\rho$-tube. Suppose there is a `WZ2PaperLiteralUnitRescaledFamilyData` on this setting. And set $C_j$ a constant in $[0, +\infty]$. Then this structure admits another family of $\delta/\rho$-tube (write $q=\delta/\rho$) $\mathbb P_q$ together with two bijections: $g_1 : \mathbb T'_{\delta/\rho} \rightarrow \mathbb T, g_2 : \mathbb T_{\delta/\rho} \rightarrow T'_{\delta/\rho}$ and an affine automorphism $h$ of $\mathbb R^3$  satisfying:
+- `Kakeya.Assouad.WZ2PaperAssouadToLiteralRescalingCertificate`: Let $\mathbb T$ be a family of $\delta$-tubes, $\rho > 0, T_\rho$ be a $\rho$-tube. Suppose there is a `WZ2PaperLiteralUnitRescaledFamilyData` on this setting. And set $C_j$ a constant in $[0, +\infty]$. Then this structure admits another family of $\delta/\rho$-tube $\mathbb P_q$ together with two bijections: $g_1 : \mathbb P_q \rightarrow \mathbb T, g_2 : \mathbb T_{\delta/\rho} \rightarrow \mathbb P_q$ and an affine automorphism $h$ of $\mathbb R^3$  satisfying:
 	- $g_1 \circ g_2 =f$
 	- $l \circ g_2 =l$
 	- $h \circ \phi_{T_\rho} \circ f= \varphi_{T_\rho} \circ f$
@@ -204,8 +205,8 @@ Basic Definitions:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDM5NTc2OTMsNTg3MTg0NTQzLC01NDczNj
-c0NDMsLTU0NzM2NzQ0MywtMzQxNzgwMzQwLC0xODM1Mjc0NTYw
-LC0xNjk0Njg5ODQ2LC04NTgyMjIxNSwtMzI4NzQwNTUsMTE1NT
-A3MzAyM119
+eyJoaXN0b3J5IjpbMjA1NzMxOTExMSw1ODcxODQ1NDMsLTU0Nz
+M2NzQ0MywtNTQ3MzY3NDQzLC0zNDE3ODAzNDAsLTE4MzUyNzQ1
+NjAsLTE2OTQ2ODk4NDYsLTg1ODIyMjE1LC0zMjg3NDA1NSwxMT
+U1MDczMDIzXX0=
 -->
