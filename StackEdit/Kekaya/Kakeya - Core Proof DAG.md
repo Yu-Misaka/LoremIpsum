@@ -2,6 +2,8 @@
 
 ### Core Proof DAG
 
+> Each section below begins with the Blueprint roadmap card statement in a blockquote (`>`), followed by the dependency tree (`✔` indicates a verified Lean declaration) and the exact mathematical translation of the Lean definitions and theorems.
+
 #### WZ2 Definition 2.12
 
 > The tubes are essentially distinct. For every $\rho_0 \in [\delta, 1]$, there are $\rho \in [\rho_0, A \rho_0)$ and $\rho$-tubes $\mathcal T_\rho$ such that:
@@ -168,7 +170,7 @@ Basic Definitions:
 5. **Slab**: Given a unit normal $\mathbf n \in \mathbb R^3$, offset $a \in \mathbb R$, and thickness $r \geq 0$, the slab is the intersection of $\overline{B(0,1)}$ with the closed $r$-neighbourhood of the hyperplane $\{\mathbf x \in \mathbb R^3 : \langle \mathbf x, \mathbf n \rangle = a\}$ (`Kakeya.Slab.carrier`)
 6. **Frostman slab Wolff bound with constant $C$**: For a **de-duplicated** family $\mathbb T$, $\# \mathbb T[W] \leq C |W| (\# \mathbb T)$ for every slab $W$ (`Kakeya.FrostmanSlabWolffBound`)
 7. **Fixed-constant unit rescaling relative to $T_\rho$** (`Kakeya.Assouad.wz2PaperLiteralUnitRescalingMap`):
-	- Let $l = l(T_\rho)$ be the coaxial line of $T_\rho$, meeting the plane $\{z = 0\}$ at $A$.
+	- Let $l = l(T_\rho)$ be the coaxial line of $T_\rho$, meeting the plane $\{z = 0\}$ at $A$ (`Kakeya.Assouad.wz1TubeAxisZeroPoint`).
 	- Let $\mathbf d$ be the unit direction vector of $T_\rho$, and orient it upward by setting $\tilde{\mathbf d} = \mathbf d$ if $d_3 \geq 0$ and $\tilde{\mathbf d} = -\mathbf d$ otherwise.
 	- Let $R$ be the reflection across the plane through the origin with normal $\tilde{\mathbf d} - \mathbf e_3$ (or $R = \mathrm{id}$ when $\tilde{\mathbf d} = \mathbf e_3$).
 	- Let $D(x, y, z) = (x/\rho, y/\rho, z)$ be the transverse scaling map.
@@ -291,6 +293,8 @@ PureWZ2RichProp62KernelStatement ✔
       │  │  ├─ WZ1PaperTubeCovers ✔
       │  │  │  └─ wz1PaperLineDistance ✔
       │  │  └─ WZ1PaperIsEssentiallyDistinct ✔
+      │  ├─ wz2PaperFullFiberIndices ✔
+      │  ├─ wz2PaperFullFiberCount ✔
       │  ├─ PureWZ2BalancedCoverData ✔
       │  │  └─ wz1PaperGridCube ✔
       │  ├─ WZ2PaperCroppedIsExtremal ✔
@@ -302,7 +306,9 @@ PureWZ2RichProp62KernelStatement ✔
 ```
 
 Basic Definitions (Section 6 cropped-tube model):
-1. **Line metric**: For two tubes $T, T'$ with coaxial lines $l, l'$ meeting $\{z = 0\}$ at $A, A'$ and upward-oriented unit directions $\tilde{\mathbf d}, \tilde{\mathbf d}'$, their line distance is $d(T, T') = \|A - A'\| + \angle(\tilde{\mathbf d}, \tilde{\mathbf d}')$. A $\rho$-tube $T_\rho$ covers a $\delta$-tube $T$ in the WZ1 sense if $d(T, T_\rho) \leq \rho / 2$ (`Kakeya.Assouad.wz1PaperLineDistance`, `Kakeya.Assouad.WZ1PaperTubeCovers`). A family $\mathbb T$ is line-metric essentially distinct if $d(T_i, T_j) > \delta$ for $i \neq j$ (`Kakeya.Assouad.WZ1PaperIsEssentiallyDistinct`).
+1. **Line metric and line-metric full fibers**: For two tubes $T, T'$ with coaxial lines $l, l'$ having $\{z = 0\}$ anchors $A, A'$ and upward-oriented unit directions $\tilde{\mathbf d}, \tilde{\mathbf d}'$, their line distance is $d(T, T') = \|A - A'\| + \angle(\tilde{\mathbf d}, \tilde{\mathbf d}')$. A $\rho$-tube $T_\rho$ covers a $\delta$-tube $T$ in the WZ1 sense if $d(T, T_\rho) \leq \rho / 2$ (`Kakeya.Assouad.wz1PaperLineDistance`, `Kakeya.Assouad.WZ1PaperTubeCovers`). In the Section 6 cropped model, the full fiber over $T_\rho$ is defined by this line-cover relation,
+   $$\mathbb T[T_\rho]_{\mathrm{line}} := \{T \in \mathbb T : d(T, T_\rho) \leq \rho/2\}$$
+   (`Kakeya.Assouad.wz2PaperFullFiberIndices`, cardinality `wz2PaperFullFiberCount`), rather than the ordinary carrier containment $\mathbb T[T_\rho] = \{T \in \mathbb T : T \subseteq T_\rho\}$ of Definition 2.12. A family $\mathbb T$ is line-metric essentially distinct if $d(T_i, T_j) > \delta$ for $i \neq j$ (`Kakeya.Assouad.WZ1PaperIsEssentiallyDistinct`).
 2. **Cropped tube and cubical shading**: For a $\delta$-tube $T$, its cropped tube body is the closed $6\delta$-neighbourhood of its coaxial line $l(T)$ intersected with $[-1, 1]^3$ (`Kakeya.Assouad.wz1PaperTubeCarrier`). A cropped shading $Y$ assigns a measurable subset of each cropped tube body (`Kakeya.Assouad.WZ1PaperTubeShading`). It is cubical if each $Y(T)$ is a union of standard $\delta$-grid cubes $Q \in \mathcal Q_\delta$ (`Kakeya.Assouad.WZ1PaperIsCubicalShading`, `Kakeya.Assouad.wz1PaperGridCube`).
 3. **Cropped CWA and cropped $\varepsilon$-extremality**: A family $\mathbb T$ satisfies the cropped CWA with error $C$ if $\#\{T \in \mathbb T : \text{cropped body of } T \subseteq W\} \leq C |W| (\#\mathbb T)$ for every convex $W \subseteq \mathbb R^3$ (`Kakeya.Assouad.WZ2PaperConvexWolffBound`). For $\sigma, \varepsilon \in \mathbb R$ and $\delta \in (0, 1]$, a nonempty pair $(\mathbb T, Y)$ with a cropped cubical shading $Y$ is cropped $\varepsilon$-extremal if the underlying ordinary family $\mathbb T$ satisfies the CWA at nearby scales with error $\delta^{-\varepsilon}$, $(\mathbb T, Y)$ is $\delta^\varepsilon$-dense (with respect to cropped tube volumes), and $|E_Y| \leq \delta^{\sigma - \varepsilon}$ (`Kakeya.Assouad.WZ2PaperCroppedIsExtremal`).
 4. **Bounded base**: $\mathbb T$ has $R$-bounded bases if $\|p_T\| \leq R$ for the basepoint $p_T$ of every $T \in \mathbb T$ (`Kakeya.Assouad.HasBoundedBase`).
@@ -310,17 +316,17 @@ Basic Definitions (Section 6 cropped-tube model):
 	- $Y(T) \subseteq Y_\rho(T_\rho)$ whenever $T_\rho$ covers $T$,
 	- $E_{Y_\rho}$ is a union of active $\rho$-grid cubes $Q \in \mathcal Q_\rho$, and $|E_Y \cap Q|$ takes a constant positive value across all active $Q$ (`Kakeya.Assouad.PureWZ2BalancedCoverData`).
 
-- `Kakeya.Assouad.PureWZ2PropStickyReentryData`: Links an ordinary $\eta_{\mathrm{src}}$-extremal configuration $(\mathbb T_{\mathrm{ord}}, Y_{\mathrm{ord}})$ at scale $\delta$ to a cropped $\eta_{\mathrm{norm}}$-extremal configuration $(\mathbb T, Y)$ ($\eta_{\mathrm{src}} \leq \eta_{\mathrm{norm}} / 2$) via a rigid isometry $\Phi : \mathbb R^3 \to \mathbb R^3$ and a subfamily selection retaining at least $(\log(1/\delta))^{-N_0}$ of the mass: the tubes of $\mathbb T \subseteq \mathcal L_3$ are the $\Phi$-images of the selected ordinary tubes (with bases bounded by $4$), the $\Phi$-image of the ordinary shading lies in $\{|z| \leq 1/4\}$, $Y(T)$ is obtained by replacing each $\Phi(Y_{\mathrm{ord}}(T))$ with its dense $\delta$-grid cubes (`pureWZ2DenseCubicalization`), and $\mathbb T$ satisfies the cropped CWA with error $\delta^{-\eta_{\mathrm{norm}}}$.
+- `Kakeya.Assouad.PureWZ2PropStickyReentryData`: Links an ordinary $\eta_{\mathrm{src}}$-extremal configuration $(\mathbb T_{\mathrm{ord}}, Y_{\mathrm{ord}})$ at scale $\delta$ to a cropped $\eta_{\mathrm{norm}}$-extremal configuration $(\mathbb T, Y)$ ($0 < \eta_{\mathrm{src}} \leq \eta_{\mathrm{norm}} / 2$) via a nonempty subfamily $\mathbb T_{\mathrm{sel}} \subseteq \mathbb T_{\mathrm{ord}}$, an ordinary subshading $Y_{\mathrm{ord}}' \subseteq Y_{\mathrm{ord}}|_{\mathbb T_{\mathrm{sel}}}$, and a rigid isometry $\Phi : \mathbb R^3 \to \mathbb R^3$: $Y_{\mathrm{ord}}'$ retains at least $(\log(1/\delta))^{-N_0}$ of the mass of $Y_{\mathrm{ord}}$ and has per-tube density $|Y_{\mathrm{ord}}'(T)| \geq \frac{1}{2}\delta^{\eta_{\mathrm{src}}}|T|$, the tubes of $\mathbb T \subseteq \mathcal L_3$ are the $\Phi$-images of $\mathbb T_{\mathrm{sel}}$ (with bases bounded by $4$), $\Phi(Y_{\mathrm{ord}}'(T)) \subseteq \{|z| \leq 1/4\}$, $Y(T)$ is the dense cubicalization of $\Phi(Y_{\mathrm{ord}}'(T))$ (`pureWZ2DenseCubicalization`), and $\mathbb T$ satisfies the cropped CWA with error $\delta^{-\eta_{\mathrm{norm}}}$.
 - `Kakeya.Assouad.PureWZ2PropStickyData`: Given a cropped configuration $(\mathbb T, Y)$ at scale $\delta$, a scale $\rho \in [\delta, 1]$, and a logarithmic exponent $N$, this records:
 	- a nonempty subfamily $\mathbb T' \subseteq \mathbb T$ and cubical subshading $Y'$ retaining at least $(\log(1/\delta))^{-N}$ of the mass of $Y$,
 	- a coarse family $\mathbb T_\rho$ of $\rho$-tubes, a Section 6 cover of $\mathbb T'$ by $\mathbb T_\rho$, and a coarse cubical shading $Y_\rho$ forming a balanced cover with $Y'$ such that $(\mathbb T_\rho, Y_\rho)$ is cropped $\varepsilon$-extremal,
-	- for each parent $T_\rho \in \mathbb T_\rho$, a unit-rescaled full-fiber output (`WZ2PaperPureRescaledFullFiberOutput`) showing that the rescaled child family at scale $\delta/\rho$ is cropped $\varepsilon$-extremal,
+	- for each parent $T_\rho \in \mathbb T_\rho$, a unit-rescaled full-fiber output (`WZ2PaperPureRescaledFullFiberOutput`) showing that the rescaled child family of $\mathbb T'[T_\rho]_{\mathrm{line}}$ at scale $\delta/\rho$ is cropped $\varepsilon$-extremal,
 	- the pointwise multiplicity upper bounds for every $p \in \mathbb R^3$ and every $T_\rho \in \mathbb T_\rho$:
-	  $$\#\{U \in \mathbb T_\rho : p \in Y_\rho(U)\} \leq \rho^{2 - \sigma - \varepsilon} \#\mathbb T_\rho, \qquad \#\{T \in \mathbb T'[T_\rho] : p \in Y'(T)\} \leq (\delta/\rho)^{2 - \sigma - \varepsilon} \#\mathbb T'[T_\rho].$$
+	  $$\#\{U \in \mathbb T_\rho : p \in Y_\rho(U)\} \leq \rho^{2 - \sigma - \varepsilon} \#\mathbb T_\rho, \qquad \#\{T \in \mathbb T'[T_\rho]_{\mathrm{line}} : p \in Y'(T)\} \leq (\delta/\rho)^{2 - \sigma - \varepsilon} \#\mathbb T'[T_\rho]_{\mathrm{line}}.$$
 - `Kakeya.Assouad.PureWZ2.Proposition63RichTerminalStickyData`: Strengthens `PureWZ2PropStickyData` (with $N = 61$) on the same families $(\mathbb T', Y')$ and $(\mathbb T_\rho, Y_\rho)$ by also retaining:
-	- a coarse re-entry certificate (`PureWZ2PropStickyReentryData`) on $(\mathbb T_\rho, Y_\rho)$ so that Proposition 6.2 can be applied a second time to the coarse configuration,
-	- uniform constant packet multiplicity $\mu_{\mathrm{fine}}$ on active parent-cell pairs, two-sided coarse multiplicity bands $\mu_{\mathrm{coarse}} \leq \mu_{Y_\rho}(p) \leq r_{\mathrm{reg}} \mu_{\mathrm{coarse}}$ with $r_{\mathrm{reg}} \leq (\log(1/\delta))^{10}$, and the matching lower multiplicity bounds $\mu_{\mathrm{fine}} \gtrsim (\delta/\rho)^{2 - \sigma + \varepsilon'} \#\mathbb T'[T_\rho]$ and $\mu_{\mathrm{coarse}} \gtrsim \rho^{2 - \sigma + \varepsilon'} \#\mathbb T_\rho$ (`Proposition63TerminalMultiplicityCertificate`).
-- `Kakeya.Assouad.PureWZ2RichProp62KernelStatement` (proved as `pure_wz2_node03_rich_prop62_kernel`): Given $\sigma$ with `PureWZ2CriticalPackage` and any output loss $\varepsilon \in (0, 1]$, there exist pre-selected losses $0 < \eta_{\mathrm{src}} \leq \eta_{\mathrm{norm}}/2 < \varepsilon$ and a threshold $\delta_0 \in (0, 1]$ such that for every $\delta \in (0, \delta_0]$, every cropped configuration $(\mathbb T, Y)$ with a `PureWZ2PropStickyReentryData` at $(\eta_{\mathrm{src}}, \eta_{\mathrm{norm}})$, and every scale $\rho \in [\delta^{1-\varepsilon}, \delta^\varepsilon]$, there exists a `Proposition63RichTerminalStickyData` with output loss $\varepsilon$.
+	- a coarse re-entry certificate (`PureWZ2PropStickyReentryData`) on $(\mathbb T_\rho, Y_\rho)$ (when the input ordinary subshading lies in the tighter axial window $\{|z| \leq 1/8\}$), so that Proposition 6.2 can be applied a second time to the coarse configuration,
+	- uniform constant packet multiplicity $\mu_{\mathrm{fine}}$ on active parent-cell pairs, two-sided coarse multiplicity bands $\mu_{\mathrm{coarse}} \leq \mu_{Y_\rho}(p) \leq r_{\mathrm{reg}} \mu_{\mathrm{coarse}}$ on $p \in E_{Y_\rho}$ with $r_{\mathrm{reg}} \lesssim (\log(1/\delta))^{10}$, and the matching lower multiplicity bounds $\mu_{\mathrm{fine}} \gtrsim (\delta/\rho)^{2 - \sigma + \varepsilon'} \#\mathbb T'[T_\rho]_{\mathrm{line}}$ and $\mu_{\mathrm{coarse}} \gtrsim \rho^{2 - \sigma + \varepsilon'} \#\mathbb T_\rho$ (`Proposition63TerminalMultiplicityCertificate`).
+- `Kakeya.Assouad.PureWZ2RichProp62KernelStatement` (proved as `pure_wz2_node03_rich_prop62_kernel`): Given $\sigma$ with `PureWZ2CriticalPackage` and any output loss $\varepsilon \in (0, 1]$, there exist pre-selected losses $0 < \eta_{\mathrm{src}} \leq \eta_{\mathrm{norm}}/2$ with $\eta_{\mathrm{norm}} < \varepsilon$ and a threshold $\delta_0 \in (0, 1]$ such that for every $\delta \in (0, \delta_0]$, every cropped configuration $(\mathbb T, Y)$ with a `PureWZ2PropStickyReentryData` at $(\eta_{\mathrm{src}}, \eta_{\mathrm{norm}})$, and every scale $\rho \in [\delta^{1-\varepsilon}, \delta^\varepsilon]$, there exists a `Proposition63RichTerminalStickyData` with output loss $\varepsilon$.
 
 ---
 
@@ -393,7 +399,7 @@ PureWZ2C2GrainsFromCriticalStatement ✔
 ```
 
 Basic Definitions:
-1. **Normalized $C^2$ slope**: A function $f : [-1, 1] \to \mathbb R$ is a normalized $C^2$ slope if it admits a $C^2$ extension to $[-1, 1]$ satisfying
+1. **Normalized $C^2$ slope**: A function $f \in C^2([-1, 1])$ is a normalized $C^2$ slope if
    $$|f(z)| \leq 1, \qquad |f'(z)| \leq 1, \qquad |f''(z)| \leq 1 \qquad \forall z \in [-1, 1]$$
    (`Kakeya.Assouad.PureWZ2C2SlopeIsNormalized`; for globally defined $C^2$ functions `SlopeFunction`, the same bound on $[-1, 1]$ is `Kakeya.Assouad.SlopeFunction.IsNormalized`).
 
@@ -421,6 +427,13 @@ WZ1ProjectionDichotomyConclusion ✔
 ├─ wz1DiscreteLineCount ✔
 ├─ wz1Perp2 ✔
 └─ wz1DotDifferenceSet ✔
+
+wz1_well_separated_projection_union (WZ1WellSeparatedProjectionUnionConclusion) ✔
+├─ DiscreteSet.IsFrostman ✔
+├─ WZ1StandardSeparation ✔
+├─ WZ1UniformTripleDensity ✔
+├─ wz1DiscreteLineCount ✔
+└─ WZ1StripLocalizationLongProjection ✔
 ```
 
 Basic Definitions:
@@ -428,13 +441,13 @@ Basic Definitions:
 2. **$s$-dimensional Katz–Tao and Frostman bounds for discrete sets**: For $A \subseteq \mathbb R^n$, $\delta > 0$, $s \in \mathbb R$, and $C \in [0, +\infty]$:
 	- $A$ satisfies the $(\delta, s, C)$-Katz–Tao bound if $\#(A \cap \overline{B(x, r)}) \leq C (r/\delta)^s$ for all $x \in \mathbb R^n$ and $r \in [\delta, 1]$ (`DiscreteSet.IsKatzTao`),
 	- $A$ satisfies the $(\delta, s, C)$-Frostman bound if $\#(A \cap \overline{B(x, r)}) \leq C r^s (\# A)$ for all $x \in \mathbb R^n$ and $r \in [\delta, 1]$ (`DiscreteSet.IsFrostman`).
-3. **Discrete line count**: For $A \subseteq \mathbb R^2$, basepoint $b \in \mathbb R^2$, direction $v \in \mathbb R^2$, and width $\delta$, `wz1DiscreteLineCount A b v delta` is the number of points of $A$ within distance $\delta$ of the affine line $b + \mathbb R v$.
+3. **Discrete line count**: For $A \subseteq \mathbb R^2$, basepoint $b \in \mathbb R^2$, direction $v \in \mathbb R^2$, and width $\delta$, `wz1DiscreteLineCount A b v delta` is $\#\{p \in A : |\langle p - b, v^\perp \rangle| \leq \delta\}$; when $\|v\| = 1$, this is the number of points of $A$ within distance $\delta$ of the affine line $b + \mathbb R v$.
 
 - `Kakeya.Assouad.WZ1ProjectionDichotomyConclusion`: For every $\varepsilon > 0$, there exist $\eta > 0$ and $\delta_0 \in (0, 1]$ such that for every $\delta \in (0, \delta_0]$ and any nonempty $\delta$-separated finite sets $F, G_1, G_2 \subseteq \overline{B(0, 1)} \subset \mathbb R^2$, each satisfying the $(\delta, 1, \delta^{-\eta})$-Katz–Tao bound, one of the following holds:
 	- **(Line concentration)** There exist a unit vector $v \in S^1$ and $b \in \mathbb R^2$ such that $F$ has at least $\delta^{\varepsilon - 1}$ points within $\delta$ of the line $\mathbb R v^\perp$ through the origin, and *both* $G_1$ and $G_2$ have at least $\delta^{\varepsilon - 1}$ points within $\delta$ of the affine line $b + \mathbb R v$. (Note the orientation compared to the roadmap card: since the dot-difference is $a \cdot (b_1 - b_2)$ with $a \in F$ and $b_1, b_2 \in G_i$, the coefficient set $F$ concentrates near the line $\mathbb R v^\perp$ through the origin, while the endpoint sets $G_1, G_2$ concentrate near an affine line parallel to $v$.)
 	- **(Dot-product expansion)** For every $H \subseteq F \times G_1 \times G_2$ with $\# H \geq \delta^{\eta - 3}$, there exist $\rho \in [\delta, 1]$ and a closed interval $I = [c - R, c + R]$ ($R > 0$) of length $|I| = 2R \geq \delta^{-\eta}\rho$ such that
 	  $$\mathcal N_\rho\bigl(I \cap \{a \cdot (b_1 - b_2) : (a, b_1, b_2) \in H\}\bigr) \geq (|I|/\rho)^{1 - \varepsilon}.$$
-- **Actual $C^2$ dependency (`Kakeya.Assouad.wz1_well_separated_projection_union`)**: `WZ1ProjectionDichotomyConclusion` is a standalone proposition interface and is not proved in its full generality. Instead, Proposition 6.4 invokes the proved theorem `wz1_well_separated_projection_union` (`WZ1WellSeparatedProjectionUnionConclusion`), which applies to a triple set $H \subseteq F \times G_1 \times G_2$ already regularised to have uniform degree and standard separation between $G_1$ and $G_2$, and whose line-concentration alternative requires only $G_1$ *or* $G_2$ (which come from the same ambient local chart) to concentrate near $b + \mathbb R v$.
+- **Actual $C^2$ dependency (`Kakeya.Assouad.wz1_well_separated_projection_union` / `WZ1WellSeparatedProjectionUnionConclusion`)**: `WZ1ProjectionDichotomyConclusion` is an unproved proposition interface. Instead, Proposition 6.4 invokes the proved theorem `wz1_well_separated_projection_union`: given nonempty $\delta$-separated sets $F, G_1, G_2 \subseteq \overline{B(0, 1)}$ satisfying the relative $(\delta, 1, \delta^{-\eta})$-Frostman bound (`IsFrostman`), standard separation `WZ1StandardSeparation` ($\mathrm{diam}(F), \mathrm{diam}(G_1), \mathrm{diam}(G_2) \leq 1/10$, $\mathrm{dist}(G_1, G_2) \geq 1/2$, and $\mathrm{dist}(0, F) \geq 1/2$), and a triple set $H \subseteq F \times G_1 \times G_2$ with $\# H \geq \delta^\eta (\# F)(\# G_1)(\# G_2)$ and uniform fiber-density lower bounds across all coordinate projections (`WZ1UniformTripleDensity`), either $F$ concentrates near $\mathbb R v^\perp$ and $G_1$ *or* $G_2$ has at least $\delta^\varepsilon (\# G_i)$ points within $\delta$ of $b + \mathbb R v$, or the dot-difference set of $H$ satisfies `WZ1StripLocalizationLongProjection` (an interval $I$ of length $\geq \delta^{-\eta}\rho$ at scale $\rho \in [\delta, 1]$ with $\mathcal N_\rho(I \cap \{a \cdot (b_1 - b_2)\}) \geq (|I|/\rho)^{1-\varepsilon}$).
 
 ---
 
@@ -461,7 +474,7 @@ pure_wz2_lemma66_prepared_interval ✔
 
 Basic Definitions:
 1. **Horizontal slab**: For $a \leq b$, `horizontalSlab a b` is the slab $\mathbb R^2 \times [a, b] = \{(x, y, z) \in \mathbb R^3 : a \leq z \leq b\}$.
-2. **Frame-normal compatibility**: For a configuration `cfg` of type `PureWZ2C2GrainConfiguration` with global slope $f$ and local plane map $V : E_Y \to S^2$, `PureWZ2FrameNormalCompatibility cfg` requires that for every reference slope $s_0 \in \mathbb R$ and every $p = (x, y, z) \in E_Y$ with $|f(z) - s_0| \leq 1/50$, the projection of $V(p)$ onto the horizontal plane in the sheared frame associated to $s_0$ has norm at least $1/16$ (`PureWZ2FrameNormalCompatibilityOn` restricts this requirement to $p$ in the slab shading union).
+2. **Frame-normal compatibility**: For a reference slope $s_0 \in \mathbb R$, let $R_{s_0}(x, y, z) = \bigl(\frac{x + s_0 y}{\sqrt{1+s_0^2}}, \frac{-s_0 x + y}{\sqrt{1+s_0^2}}, z\bigr)$ be the horizontal rotation aligning $(1, s_0, 0)$ with the $x$-axis, and let $P_{xz}(u, v, w) = (u, 0, w)$ drop the rotated $y$-component. For a configuration `cfg` of type `PureWZ2C2GrainConfiguration` with global slope $f$ and local plane map $V : E_Y \to S^2$, `PureWZ2FrameNormalCompatibility cfg` requires that for every $s_0 \in \mathbb R$ and every $p = (x, y, z) \in E_Y$ with $|f(z) - s_0| \leq 1/50$, the projected normal $R_{s_0}^{-1} P_{xz} R_{s_0} V(p)$ (`pureWZ2FrameProjectedNormal`) has norm at least $1/16$ (`PureWZ2FrameNormalCompatibilityOn` restricts this condition to $p$ in the slab shading union).
 
 - `Kakeya.Assouad.PureWZ2Section6ScaleData`: Given a cropped shading $Y$ on $\mathbb T$ at scale $\delta$, exponent $\sigma$, loss $\eta_{\mathrm{slab}}$, and scale $r \in [\delta, 1]$, this records an interval $J = [a, b] \subseteq [-1, 1]$ of length $r = b - a$ and a cubical subshading $Y_J \subseteq Y$ supported in $\mathbb R^2 \times J$ such that:
 	- **Normalized slab mass**: $\sum_{T \in \mathbb T} |Y_J(T)| \geq \frac{\pi}{4} \delta^{\eta_{\mathrm{slab}} + 2} (\#\mathbb T) r$,
@@ -496,15 +509,16 @@ PureWZ2LargeSlopeRetainedStatement ✔
    ├─ PureWZ2HalfOffsetTerminalCleanupSourceRegularizationData ✔
    ├─ DirectHalfOffsetTerminalRequestedCWAData ✔
    └─ PureWZ2HorizontalTerminalData ✔
-      └─ PureWZ2LargeSlopeConfiguration ✔
-         ├─ WZ1PaperIsLineClass ✔
-         ├─ WZ1PaperIsCubicalShading ✔
-         ├─ WZ2PaperCroppedIsExtremal ✔
-         ├─ WZ2PaperConvexWolffBound ✔
-         ├─ SlopeFunction.IsNonsingular ✔
-         ├─ PureWZ2PaperADSet1 ✔
-         ├─ twistedProjection ✔
-         └─ PureWZ2LocalGrainData ✔
+      └─ PureWZ2HorizontalTerminalData.toLargeSlopeConfiguration ✔
+         └─ PureWZ2LargeSlopeConfiguration ✔
+            ├─ WZ1PaperIsLineClass ✔
+            ├─ WZ1PaperIsCubicalShading ✔
+            ├─ WZ2PaperCroppedIsExtremal ✔
+            ├─ WZ2PaperConvexWolffBound ✔
+            ├─ SlopeFunction.IsNonsingular ✔
+            ├─ PureWZ2PaperADSet1 ✔
+            ├─ twistedProjection ✔
+            └─ PureWZ2LocalGrainData ✔
 ```
 
 Basic Definitions:
@@ -571,8 +585,8 @@ Basic Definitions:
 	- $(\mathbb T, Y)$ is $\delta^\varepsilon$-dense and $Y$ is supported in $\mathbb R^2 \times [-1, 1]$,
 	- $f$ is nonsingular on $[-1, 1]$ and satisfies $f(0) = 0$,
 	- $|X_f(Y)| \leq \delta^{\sigma - \varepsilon}$.
-  *(Note: To achieve $f(0) = 0$ from the Proposition 6.5 output slope $f_0$ with $s = f_0(0)$, the proof applies the shear-scaling map $A_s(x, y, z) = (k(x + sy), ky, z)$ with $k = \frac{1}{4(1+|s|)}$, which replaces $f_0$ by $\tilde{f} = f_0 - s$ and scales projected area by $k$ since $\pi_{\tilde{f}}(A_s(x,y,z)) = (k(x+f_0(z)y), z)$. Note also that both the roadmap card and Lean use the exponent $\sigma - \varepsilon$, whereas WZ2 Equation (6.11) prints $\sigma + \varepsilon$.)*
-- `Kakeya.Assouad.PureWZ2NormalizedProjectionStatement` (proved as `pure_wz2_left_line_normalized_projection`): Given $\sigma$ with `PureWZ2CriticalPackage`, for every $\varepsilon \in (0, \sigma)$ and every $\delta_0 > 0$, there exists $\delta \in (0, \min(\delta_0, 1))$ and a `PureWZ2NormalizedProjectionData` at $(\sigma, \varepsilon, \delta)$.
+  *(Note: To achieve $f(0) = 0$ from the Proposition 6.5 output slope $f_0$ with $s = f_0(0)$, the proof uses the quantitative offset bound $1 + |s| \leq \delta_{\mathrm{source}}^{-a}$ from the retained construction and applies the shear-scaling map $A_s(x, y, z) = (k(x + sy), ky, z)$ with $k = \frac{1}{4(1+|s|)}$, which replaces $f_0$ by $\tilde{f} = f_0 - s$ (so $|\tilde{f}(z)| \leq 2$ on $[-1, 1]$) and scales projected area by $k$ since $\pi_{\tilde{f}}(A_s(x,y,z)) = (k(x+f_0(z)y), z)$. Note also that both the roadmap card and Lean use the exponent $\sigma - \varepsilon$, whereas WZ2 Equation (6.11) prints $\sigma + \varepsilon$.)*
+- `Kakeya.Assouad.PureWZ2NormalizedProjectionStatement` (proved as `pure_wz2_left_line_normalized_projection`): Given $\sigma$ with `PureWZ2CriticalPackage`, for every $\varepsilon \in (0, \sigma)$ and every $\delta_0 > 0$, there exists $\delta$ with $0 < \delta \leq \delta_0$ and $\delta < 1$ together with a `PureWZ2NormalizedProjectionData` at $(\sigma, \varepsilon, \delta)$.
 
 ---
 
@@ -603,16 +617,16 @@ ParameterBlockRepresentativeCinematicPullbackStatement ✔
 ```
 
 Basic Definitions:
-1. **Collapsed parameter triples**: In the vertical chart $(x, y, z) = (a_T + c_T z, b_T + d_T z, z)$, after restricting $c_T$ to an interval of width $\delta$ around $c_0$, each tube's twisted projection $\pi_f(x, y, z) = (a_T + b_T f(z) + d_T z f(z) + c_T z, z)$ is governed by its three-dimensional parameter point $(a_T, b_T, d_T) \in \mathbb R^3$ (`Kakeya.Assouad.tubeParameterPoint3`).
+1. **Collapsed parameter triples**: In the vertical chart $(x, y, z) = (a_T + c_T z, b_T + d_T z, z)$, the twisted projection of a tube's axis is $\pi_f(a_T + c_T z, b_T + d_T z, z) = (a_T + b_T f(z) + d_T z f(z) + c_T z, z)$. After restricting $c_T$ to an interval of width $\delta$ around $c_0$, each tube's projection is governed by its three-dimensional parameter point $(a_T, b_T, d_T) \in \mathbb R^3$, rescaled by $(1/24, 1/24, 1/4)$ so that bounded chart parameters lie in $\overline{B(0, 1)}$ (`Kakeya.Assouad.tubeParameterPoint3`).
 2. **Per-tube mass lower bound**: A shading $Y$ has per-tube mass $\theta$ if $|Y(T)| \geq \theta$ for every active $T \in \mathbb T$, i.e. whenever $Y(T) \neq \varnothing$ (`Kakeya.Assouad.HasPerTubeMass`).
 
-- `Kakeya.Assouad.TubeParameterClusterFrostmanData`: Given $(\mathbb T, Y)$ at scale $\delta$ with parameter Frostman constant $C$ and density $\lambda$, this records a whole-tube subshading $Y_{\mathrm{cl}} \subseteq Y$ retaining mass up to a logarithmic factor in $C \lambda^{-1} \delta^{-1}$, together with a $\delta$-separated finite set $P_{\mathrm{cl}} \subseteq \overline{B(0, 1)} \subset \mathbb R^3$ of collapsed $(a, b, d)$ cluster centers satisfying the $(\delta, 1, C_{\mathrm{cl}})$-Frostman bound.
-- `Kakeya.Assouad.ParameterLocalFullBlockData`: Selects a block scale $q \in (\delta^{1-\varepsilon^2}, 1/100]$, a center $p_0 \in \mathbb R^3$, and a nonempty local parameter subset $P \subseteq P_{\mathrm{cl}} \cap \overline{B(p_0, q/10)}$ (with recentered copy $P_0 = P - p_0 \subseteq \overline{B(0, q/10)}$) such that all active tubes in the block have $|c_T - c_0| \leq \delta/2$ and $(P_0) / q$ satisfies the $(h, 1, O(1))$-Katz–Tao bound at scale $h = \delta/q$ with cardinality $\# P \gtrsim (q/\delta)^{1 - 20\varepsilon^2}$.
-- `Kakeya.Assouad.ParameterLocalRepresentativeBlockData`: Selects an injective map `sourceIndex` assigning to each parameter point $p \in P$ a single active representative tube $T_p \in \mathbb T$ with $(a_{T_p}, b_{T_p}, d_{T_p})$ assigned to $p$, forming the representative family $\mathbb T_{\mathrm{rep}}$ of cardinality $\# P$ and shading $Y_{\mathrm{rep}}$. (Selecting one tube per collapsed parameter ensures that the replicated family has a bounded number of tubes per cinematic curve, avoiding unbounded multiplicity from duplicate indexed tubes.)
+- `Kakeya.Assouad.TubeParameterClusterFrostmanData`: Given $(\mathbb T, Y)$ at scale $\delta$ with parameter Frostman constant $C$ and density $\lambda$, this records a whole-tube subshading $Y_{\mathrm{cl}} \subseteq Y$ retaining mass up to a logarithmic factor $R_{\mathrm{reg}}$ in $C \lambda^{-1} \delta^{-1}$, a $\delta$-separated finite set $P_{\mathrm{cl}} \subseteq \overline{B(0, 1)} \subset \mathbb R^3$ of collapsed $(a, b, d)$ cluster centers satisfying the $(\delta, 1, C_{\mathrm{cl}})$-Frostman bound with $C_{\mathrm{cl}} = 10^5 C R_{\mathrm{reg}} \lambda^{-1}$, and an assignment map $\mathrm{assign} : \mathbb T \to P_{\mathrm{cl}}$ with comparable cluster weights $\mu_{\mathrm{cl}} \leq \sum_{\mathrm{assign}(T) = p} |Y_{\mathrm{cl}}(T)| \leq 2\mu_{\mathrm{cl}}$ for every $p \in P_{\mathrm{cl}}$.
+- `Kakeya.Assouad.ParameterLocalFullBlockData`: Selects a block scale $q \in [\delta, 1/100]$ with $\delta^{1-\varepsilon^2} < q/10$, a center $p_0 \in \mathbb R^3$, and a nonempty local parameter subset $P \subseteq P_{\mathrm{cl}} \cap \overline{B(p_0, q/10)}$ (with recentered copy $P_0 = P - p_0 \subseteq \overline{B(0, q/10)}$) such that all active tubes in the block have $|c_T - c_0| \leq \delta/2$, the block shading mass is at least $(\# P)\mu_{\mathrm{cl}}$, $P_0$ satisfies the $(\delta, 1-\varepsilon^2, 100)$-Katz–Tao bound, and $\# P \gtrsim (q/\delta)^{1 - 20\varepsilon^2}$.
+- `Kakeya.Assouad.ParameterLocalRepresentativeBlockData`: Selects an injective map `sourceIndex` assigning to each parameter point $p \in P$ a single active representative tube $T_p \in \mathbb T$ whose rescaled $(a, b, d)$ parameter equals $p$, forming the representative family $\mathbb T_{\mathrm{rep}}$ of cardinality $\# P$ and shading $Y_{\mathrm{rep}}$. (Selecting one tube per collapsed parameter ensures that the replicated family has a bounded number of tubes per cinematic curve, avoiding unbounded multiplicity from duplicate indexed tubes.)
 - `Kakeya.Assouad.ParameterBlockAmplificationData`: Translates $P_0$ by a finite set $\Lambda \subseteq \mathbb R^3$ of $m = \#\Lambda \sim q^{-1}$ translation vectors so that the translates $P_0 + v$ ($v \in \Lambda$) are pairwise disjoint, their union $\widetilde P = \bigcup_{v \in \Lambda} (P_0 + v) \subseteq [-1/2, 1/2]^3$ has cardinality $m (\# P)$, and $\widetilde P$ satisfies the $(\delta, 1, 10^5)$-Katz–Tao bound at scale $\delta$.
-- `Kakeya.Assouad.ParameterBlockRepresentativeCinematicPullbackData`: Records a subshading $Z \subseteq Y_{\mathrm{rep}}$ on $\mathbb T_{\mathrm{rep}}$ such that:
-  $$\sum_{T \in \mathbb T_{\mathrm{rep}}} |Z(T)| \geq \frac{1}{2} \sum_{T \in \mathbb T_{\mathrm{rep}}} |Y_{\mathrm{rep}}(T)| \geq \frac{1}{2} \theta (\# P),$$
-  and with $m = \#\Lambda$ and $B = 12500000$ (`parameterBlockRepresentativeCopiedFiberCap`),
+- `Kakeya.Assouad.ParameterBlockRepresentativeCinematicPullbackData`: Records a subshading $Z \subseteq Y_{\mathrm{rep}}$ on $\mathbb T_{\mathrm{rep}}$ satisfying the two mass bounds
+  $$\sum_{T \in \mathbb T_{\mathrm{rep}}} |Z(T)| \geq \frac{1}{2} \sum_{T \in \mathbb T_{\mathrm{rep}}} |Y_{\mathrm{rep}}(T)|, \qquad \sum_{T \in \mathbb T_{\mathrm{rep}}} |Z(T)| \geq \frac{1}{2} \theta (\# P),$$
+  and, with $m = \#\Lambda$ and $B = 12500000$ (`parameterBlockRepresentativeCopiedFiberCap`), the area lower bound
   $$|X_f(Z)| \geq \frac{1}{m} \left(\frac{m \sum_{T \in \mathbb T_{\mathrm{rep}}} |Z(T)|}{20\delta \cdot B \delta^{-\beta}}\right)^3.$$
 - `Kakeya.Assouad.ParameterBlockRepresentativeCinematicPullbackStatement` (proved as `parameter_block_representative_cinematic_pullback`): Given the four auxiliary geometric/cinematic statements (`HalfParameterCinematicPYZGeneralStatement`, `CompactSubshadingSelectionStatement`, `CompactTubeTwistedProjectionAreaStatement`, `AssignedCurveProjectionContainmentFromVerticalChartStatement`), for every $\varepsilon \in (0, 1/10)$ and $\beta > 0$, there exists $\delta_0 \in (0, 1)$ such that for every $\delta \in (0, \delta_0]$, every vertical-chart configuration $(\mathbb T, Y)$ with clustered data supported in $\mathbb R^2 \times [0, 1]$, local block $P$, representative family $\mathbb T_{\mathrm{rep}}$, amplification $\Lambda$, per-tube mass $\theta \in (0, +\infty)$, and nonsingular slope $f$ with $f(0) = 0$, there exists a `ParameterBlockRepresentativeCinematicPullbackData`.
 
@@ -642,12 +656,12 @@ WZ2UniformC2Input ✔
 
 Basic Definitions:
 1. **$C^2([0, 1])$ metric and jet gap**: For $f, g \in C^2([0, 1])$ (`Kakeya.Cinematic.C2Function`), let
-   $$\|f - g\|_{C^2} = \sup_{t \in [0, 1]} |f(t) - g(t)| + \sup_{t \in [0, 1]} |f'(t) - g'(t)| + \sup_{t \in [0, 1]} |f''(t) - g''(t)|$$
+   $$d_{C^2}(f, g) = \max\Bigl\{\sup_{t \in [0, 1]} |f(t) - g(t)|, \, \sup_{t \in [0, 1]} |f'(t) - g'(t)|, \, \sup_{t \in [0, 1]} |f''(t) - g''(t)|\Bigr\}$$
    (`c2Distance`), and at each $t \in [0, 1]$ define the jet gap $\mathrm{jetGap}(f, g, t) = |f(t) - g(t)| + |f'(t) - g'(t)| + |f''(t) - g''(t)|$.
 2. **Cinematic family**: A family $\mathcal F \subseteq C^2([0, 1])$ is cinematic with constants $K, D \geq 1$ (`Kakeya.Cinematic.IsCinematicFamily`) if:
-	- $\mathrm{diam}_{C^2}(\mathcal F) \leq K$,
+	- $d_{C^2}(f, g) \leq K$ for all $f, g \in \mathcal F$,
 	- every $C^2$-ball in $\mathcal F$ of radius $r > 0$ can be covered by at most $D$ balls of radius $r/2$ centered in $\mathcal F$,
-	- for all $f, g \in \mathcal F$ and all $t \in [0, 1]$, $\mathrm{jetGap}(f, g, t) \geq K^{-1} \|f - g\|_{C^2}$.
+	- for all $f, g \in \mathcal F$ and all $t \in [0, 1]$, $\mathrm{jetGap}(f, g, t) \geq K^{-1} d_{C^2}(f, g)$.
 3. **Uniform $C^2$ bound**: $\mathcal F$ has uniform $C^2$ bound $M \geq 0$ if $|f(t)|, |f'(t)|, |f''(t)| \leq M$ for all $f \in \mathcal F$ and $t \in [0, 1]$ (`Kakeya.Cinematic.HasUniformC2Bound`).
 4. **Katz–Tao bound for curve families**: A finite family $F \subseteq C^2([0, 1])$ satisfies the $(\delta, C_{\mathrm{KT}})$-Katz–Tao bound if $\# F \leq C_{\mathrm{KT}} / \delta$ and $\#(F \cap B_{C^2}(g, r)) \leq C_{\mathrm{KT}} (r/\delta)$ for every $g \in C^2([0, 1])$ and $r \in [\delta, 1]$ (`Kakeya.Cinematic.FiniteFunctionFamily.HasKatzTaoBound`).
 
@@ -760,7 +774,7 @@ pure_wz2_no_critical_package ✔
 ```
 
 - `Kakeya.Assouad.pure_wz2_no_critical_package`: For every $\sigma \in \mathbb R$, `PureWZ2CriticalPackage sigma` implies `False`.
-  *(In the proof, given `PureWZ2CriticalPackage sigma` with $0 < \sigma < 1$, one first applies Proposition 6.8 (`pure_wz2_convex_wolff_lower_bound_via_dilated_tubes`) with $\varepsilon = \sigma/4$ to obtain $\eta \in (0, \sigma/4]$ and $\delta_0 \in (0, 1)$. One then invokes Lemma 6.7 (`pure_wz2_left_line_normalized_projection`) with loss $\eta$ and scale ceiling $\delta_0$ to obtain a configuration $(\mathbb T, Y)$ and slope $f$ at scale $\delta \in (0, \delta_0)$ satisfying both $|X_f(Y)| \geq \delta^{\sigma/4}$ and $|X_f(Y)| \leq \delta^{\sigma - \eta}$, a contradiction since $0 < \delta < 1$ and $\sigma - \eta \geq \frac{3}{4}\sigma > \sigma/4$.)*
+  *(In the proof, given `PureWZ2CriticalPackage sigma` with $0 < \sigma < 1$, one first applies Proposition 6.8 (`pure_wz2_convex_wolff_lower_bound_via_dilated_tubes`) with $\varepsilon = \sigma/4$ to obtain $\eta \in (0, \sigma/4]$ and $\delta_0 \in (0, 1)$. One then invokes Lemma 6.7 (`pure_wz2_left_line_normalized_projection`) with loss $\eta$ and scale ceiling $\delta_0$ to obtain a configuration $(\mathbb T, Y)$ and slope $f$ at scale $\delta \in (0, \delta_0]$ ($\delta < 1$) satisfying both $|X_f(Y)| \geq \delta^{\sigma/4}$ and $|X_f(Y)| \leq \delta^{\sigma - \eta}$, a contradiction since $0 < \delta < 1$ and $\sigma - \eta \geq \frac{3}{4}\sigma > \sigma/4$.)*
 
 ---
 

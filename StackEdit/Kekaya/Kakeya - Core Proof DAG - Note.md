@@ -24,10 +24,19 @@
   \sum_{T \in \mathbb T} |Y_J(T)| \geq \frac{\pi}{4} \delta^{\eta/8 + 2} (\#\mathbb T) |J|,
   $$
   并附带点态重数上界 $\mu_{Y_J}(p) \leq (\delta/|J|)^{2-\sigma-\eta/8}\#\mathbb T$ 与 $\delta^{2-\sigma-\eta/4096}\#\mathbb T$。
-- **数学原因**：
-  - 在 WZ1（方向分离 / Sticky Kakeya）中，$\#\mathbb T \approx \delta^{-2}$，因此 $\delta^2 \#\mathbb T \approx 1$，绝对质量与归一化质量一致。
-  - 但在 WZ2（Assouad / CWA）中，Definition 2.12 **没有方向分离假设，也没有固定 $\#\mathbb T \approx \delta^{-2}$**。CWA 给出的上界是相对形式 $\#\mathbb T[W] \leq C |W| (\#\mathbb T)$，右侧带有因子 $\#\mathbb T$。在 Lemma 6.6 内部将 slab 质量转化为棱柱（prism）与细管计数并与 CWA 上界比较时，两侧必须同时带有 $\#\mathbb T$ 才能约去；若只假设绝对质量 $\geq \delta^\eta |J|$，量纲在一般 $\#\mathbb T$ 下并不匹配。
-  - 在 Proposition 6.5 的实际构造中，slab $J$ 是对 $\delta^\eta$-dense 的全局 shading（总质量 $\geq \delta^\eta \sum_T |T| \sim \delta^{\eta+2}\#\mathbb T$）由抽屉原理选出的，天然满足的正是归一化质量下界 $\gtrsim \delta^{\eta+2}(\#\mathbb T)|J|$，同时由 Proposition 6.2 提供了所需的点态重数上界。
+- **数学原因（原文式 (6.7)–(6.8) 的质量转计数标度）**：
+  - 记 $N = \#\mathbb T$，$M_J = \sum_{T \in \mathbb T} |Y(T) \cap (\mathbb R^2 \times J)|$，并定义该 slab 上的**相对质量密度**
+    $$
+    \theta_J := \frac{M_J}{|J| \sum_{T \in \mathbb T} |T|} \asymp \frac{M_J}{|J| \delta^2 N}.
+    $$
+    在 Lemma 6.6 的证明（WZ2 式 (6.7)–(6.8)）中，每根细管在 $\mathbb R^2 \times J$ 内的体积至多为 $O(\delta^2 |J|)$；因此将保留下来的质量分配到 $K$ 个局部区域 $S$ 后，由质量下界转出的细管计数下界是
+    $$
+    \#\mathbb T_S \gtrsim \delta^{O(\eta)} \frac{M_J}{K \delta^2 |J|} = \delta^{O(\eta)} \theta_J \, \frac{N}{K}.
+    $$
+    随后证明需要将 $\#\mathbb T_S$ 与顶层 CWA 在棱柱 $P_S$ 上给出的相对上界 $\#\mathbb T[P_S] \leq \delta^{-\eta} |P_S| N$ 比较并消去两侧的 $N$。要使这一步成立，必须保证相对密度满足 $\theta_J \gtrsim \delta^{O(\eta)}$（即 $M_J \gtrsim \delta^{O(\eta) + 2} N |J|$）。
+  - 在 WZ1（方向分离 / Sticky Kakeya）中，方向分离与质量下界保证 $N \approx \delta^{-2}$（允许 $\delta^\varepsilon$ 损失），故 $\delta^2 N \approx 1$，绝对质量 $M_J \geq \delta^\eta |J|$ 与相对质量 $\theta_J \gtrsim \delta^\eta$ 是一回事。
+  - 但在 WZ2（Assouad / CWA）中，三维空间的直线流形是 $4$ 维的，Definition 2.12 **没有方向分离假设，也没有约束 $N \lesssim \delta^{-2}$**（顶层 CWA、$\delta^\eta$-稠密性及 $E_Y$ 上的 AD 条件关于 $N$ 是齐次的，当 $N \gg \delta^{-2}$ 如 $N \asymp \delta^{-3}$ 时，绝对质量 $M_J \geq \delta^\eta |J|$ 仅能给出 $\theta_J \gtrsim \delta^{1+\eta}$，在式 (6.7)–(6.8) 中会多损失一个无法被 $\delta^{O(\eta)}$ 吸收的固定幂次）。因此，从 WZ1 迁移到 WZ2 时漏掉因子 $\sum_T |T| \asymp \delta^2 N$ 是真实的量纲/标度遗漏。（注：由于最终 Theorem 5.2 成立从而 $\sigma > 0$ 的极值配置在逻辑上为空集，讨论 Lemma 6.6 的重点在于其证明机制 (6.7)–(6.8) 所需的实际假设标度，而非构造真极值反例。）
+  - 在 Proposition 6.5 的实际构造中，slab $J$ 是对 $\delta^\eta$-dense 的全局 shading（总质量 $\sum_T |Y(T)| \geq \delta^\eta \sum_T |T| \asymp \delta^{\eta+2} N$）由抽屉原理选出的，天然满足的正是相对质量下界 $\theta_J \gtrsim \delta^\eta$（即 $M_J \gtrsim \delta^{\eta+2} N |J|$），同时由 Proposition 6.2 提供了将体积下界转化为管数下界所需的点态重数上界。
 
 ---
 
@@ -46,13 +55,14 @@
    - **Lean 的修正**：将 Proposition 7.1 的粗管测试修正为中心放大 $32$ 倍的粗管 $32 \cdot T_r$（`DilatedTubeWolffVolumeBound F 32`）。在有界竖直图中，长度 $32$ 的粗轴足以覆盖工作球内的整条支撑直线段，从而以常数 $128000 = 320 \cdot 20^2$ 严格推出参数 Frostman 界。
    - **对后续定理无影响**：在 Proposition 6.8 中，输入假设是对**任意凸集**成立的 CWA；中心放大 $32$ 倍的粗管依然是凸集，因此 CWA 直接给出所需的长度 $32$ 粗管测试上界，不会给 Proposition 6.8 或 Theorem 5.2 增加任何外加假设。
 
-2. **斜率初值 $f(0)$ 的无界偏移**：
+2. **斜率初值 $f(0)$ 的无界偏移与定量控制**：
    - 非退化条件 $1 \leq |f'(z)| \leq 2, |f''(z)| \leq 1/100$ 并未限制 $|f(0)|$。若 $|f(0)|$ 随 $\delta \to 0$ 任意增大，阈值 $\delta_0$ 无法一致选取（反例见 `not_pureWZ2UnrestrictedTubeWolffProjectionStatement`）。
    - Lean 在 Proposition 7.1 与 Proposition 6.8 中显式要求 $f(0) = 0$，并在上游 Lemma 6.7 中通过仿射剪切缩放
      $$
      A_s(x, y, z) = \bigl(k(x + sy), \, ky, \, z\bigr), \qquad s = f(0), \quad k = \frac{1}{4(1+|s|)},
      $$
-     将斜率变成 $\tilde{f} = f - f(0)$（满足 $\tilde{f}(0) = 0$），且由恒等式 $\pi_{\tilde{f}}(A_s(x,y,z)) = (k(x+f(z)y), z)$ 控制投影面积缩放因子 $k$。
+     将斜率变成 $\tilde{f} = f - f(0)$（满足 $\tilde{f}(0) = 0$），且由恒等式 $\pi_{\tilde{f}}(A_s(x,y,z)) = (k(x+f(z)y), z)$ 使二维投影面积乘上因子 $k$、三维体积乘上 Jacobian $k^2$。
+   - 注意仅靠代数恒等式还不够：由于三维体积缩放了 $k^2$，为了使重新成管后的密度与 CWA 常数损失能被预设的 $\delta^\varepsilon$ 吸收，必须有 $|f(0)|$ 的小幂增长上界 $1 + |f(0)| \leq \delta^{-a}$（$a \ll \varepsilon$）。这一定量上界由 Proposition 6.5 保留的源尺度构造关系（`exists_actual_terminal_slope_offset_cutoff_for_output_loss`）在选定阈值前严格提供。
 
 ---
 
@@ -66,10 +76,10 @@
 #### 4. WZ1 Theorem 5.2 (`T5_2`) 与 WZ2 Lemma 2.13 (`W2L2_13`)：直线集中方向与定理角色
 
 - **WZ1 Theorem 5.2 (`T5_2`)**：
-  1. **正交直线与仿射直线的归属方向**：考虑点积差集合 $\{a \cdot (b_1 - b_2) : (a, b_1, b_2) \in H\}$（$a \in F, b_i \in G$）。若点积差不展开，则差向量 $b_1 - b_2$ 必须平行于某单位方向 $v$，这意味着端点集 $G$ 集中在某条方向为 $v$ 的**仿射直线** $b + \mathbb R v$ 附近；而系数 $a \in F$ 必须与 $v$ 近乎正交，即 $F$ 集中在**过原点的正交直线** $\mathbb R v^\perp$ 附近（若 $G$ 所在的仿射线不过原点，$F$ 必须过原点才能使点积差小）。Blueprint 卡片将“过原点的线”和“仿射线”写反了，Lean 的 `WZ1ProjectionDichotomyConclusion` 按正确方向定义。
-  2. **接口与实际调用的区别**：完整一般二择一命题 `WZ1ProjectionDichotomyConclusion` 在仓库中仅作为命题定义（未证明）。Proposition 6.4 实际调用的是已证明的 `wz1_well_separated_projection_union`：输入三元组集合 $H \subseteq F \times G_1 \times G_2$ 已经过标准分离与度数均匀化预处理，且集中分支只需 $G_1$ 或 $G_2$ 之一集中在仿射线上。在调和分析看来，先做分离与均匀化属于标准二进抽屉原理，因此实际使用的定理已具备所需的全部数学力量。
+  1. **正交直线与仿射直线的归属方向**：考虑点积差集合 $\{a \cdot (b_1 - b_2) : (a, b_1, b_2) \in H\}$（$a \in F, b_i \in G$）。若点积差不展开，则差向量 $b_1 - b_2$ 必须平行于某单位方向 $v$，这意味着端点集 $G$ 集中在某条方向为 $v$ 的**仿射直线** $b + \mathbb R v$ 附近；而系数 $a \in F$ 必须与 $v$ 近乎正交，即 $F$ 集中在**过原点的正交直线** $\mathbb R v^\perp$ 附近（若 $G$ 所在的仿射线不过原点，$F$ 必须过原点才能使点积差小）。WZ1 v2 论文原文及 Blueprint 卡片均将“过原点的线”和“仿射线”的归属印反了，Lean 的 `WZ1ProjectionDichotomyConclusion` 按正确方向定义。
+  2. **接口与实际调用的区别**：完整一般二择一命题 `WZ1ProjectionDichotomyConclusion` 在仓库中仅作为命题定义（未证明）。Proposition 6.4 实际调用的是已证明的 `wz1_well_separated_projection_union`：输入三元组集合 $H \subseteq F \times G_1 \times G_2$ 已经过标准分离与度数均匀化预处理，且集中分支只需 $G_1$ 或 $G_2$ 之一集中在仿射线上。在调和分析看来，原定理针对单个集合 $G$（当 $G_1, G_2 \subseteq G$ 时，其中一个集中即蕴含 $G$ 集中），且从一般 $H \subseteq F \times G \times G$ 做分离与度数二进均匀化属于标准的几行抽屉原理归约，因此实际使用的定理具备完全相同的调和分析实质。
 - **WZ2 Lemma 2.13 (`W2L2_13`)**：
-  - 论文将其表述为“多尺度 CWA 对任意粗覆盖与单位重缩放纤维保持闭合”的独立一般引理；Lean 中没有对应的一般引理声明，而是在 Proposition 6.2 的构造内部直接为所选出的具体粗族与纤维建立多尺度证书。
+  - 论文将其表述为“对每个请求尺度 $\rho_0 \in [\delta, 1]$，存在附近尺度 $\rho$ 与粗覆盖，使粗族与每个单位重缩放纤维均继承多尺度 CWA”的独立一般引理；Lean 中没有将这一继承性质单独抽成一个通用引理声明，而是在 Proposition 6.2 的构造内部直接为所选出的具体粗族与纤维建立多尺度证书。
 
 ---
 
