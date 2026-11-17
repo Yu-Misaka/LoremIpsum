@@ -800,5 +800,23 @@ PureWZ2Theorem5_2Unconditional ✔
 - `Kakeya.Assouad.PureWZ2Theorem5_2Unconditional`: Proves `PureWZ2Theorem5_2Statement` unconditionally: for every $\varepsilon > 0$, there exist $\eta > 0$ and $\delta_0 \in (0, 1]$ such that for every $\delta \in (0, \delta_0]$, every nonempty $\delta$-tube family $\mathbb T$ satisfying the CWA at nearby scales (`WZ2PaperPureCWAAtNearbyScales`) with error $\delta^{-\eta}$, and every $\delta^\eta$-dense shading $Y$ of $\mathbb T$,
   $$\Bigl|\bigcup_{T \in \mathbb T} Y(T)\Bigr| \geq \delta^\varepsilon.$$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTk5MDI2NTRdfQ==
+eyJkaXNjdXNzaW9ucyI6eyJvVW9YWUpTQ1k5YW92N2dZIjp7In
+RleHQiOiJXQSB3aXRoIGVycm9yICQ0MDAwMDAwQyQiLCJzdGFy
+dCI6MTM0MTQsImVuZCI6MTM0Mzh9LCI4SktBWGt5SmJ1aGYwSj
+dQIjp7InRleHQiOiJhIHJlcXVlc3RlZCBzY2FsZSAkXFxyaG9f
+MFxcaW5bXFxkZWx0YSwxXSQgYW5kIGFuIGFjdHVhbCBzZWxlY3
+RlZCBzY2FsZSAkXFxyaG9cXGluW1xc4oCmIiwic3RhcnQiOjEz
+NjQ4LCJlbmQiOjEzODIwfSwialJxYnl6RU5uUzJoc3RqVyI6ey
+J0ZXh0IjoiLSIsInN0YXJ0IjoxNDI4OSwiZW5kIjoxNDI5MH19
+LCJjb21tZW50cyI6eyJITDlaS25BY0RoOUpPYlB0Ijp7ImRpc2
+N1c3Npb25JZCI6Im9Vb1hZSlNDWTlhb3Y3Z1kiLCJzdWIiOiJn
+aDoxMDkzNjU3MjMiLCJ0ZXh0IjoiPyIsImNyZWF0ZWQiOjE3OT
+QyNzY3NDQ5NTJ9LCJCZmIzZHFac0ZjQTdwYnBZIjp7ImRpc2N1
+c3Npb25JZCI6IjhKS0FYa3lKYnVoZjBKN1AiLCJzdWIiOiJnaD
+oxMDkzNjU3MjMiLCJ0ZXh0IjoibmVhcmJ5IiwiY3JlYXRlZCI6
+MTc5NDI3Njg2MjgyMH0sIkpoOGNMSXNobDRtWDlTVUkiOnsiZG
+lzY3Vzc2lvbklkIjoialJxYnl6RU5uUzJoc3RqVyIsInN1YiI6
+ImdoOjEwOTM2NTcyMyIsInRleHQiOiJUW1RfXFxyaG9dIiwiY3
+JlYXRlZCI6MTc5NDI3Njk1Mzg1NH19LCJoaXN0b3J5IjpbODU0
+MTk5NDA4XX0=
 -->
